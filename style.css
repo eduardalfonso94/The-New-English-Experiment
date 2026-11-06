@@ -1,0 +1,495 @@
+
+/* =====================================
+   THE NEW LANGUAGE EXPERIMENT
+   GENERAL SETTINGS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #252525;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+}
+
+.logo a {
+    font-size: 25px;
+    font-weight: bold;
+    color: #102c54;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    display: block;
+    font-size: 15px;
+    color: #2878b8;
+    letter-spacing: 5px;
+}
+
+.header-links a {
+    margin-left: 20px;
+    font-size: 14px;
+    color: #555555;
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+nav {
+    background-color: #102c54;
+    padding: 0 8%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav li {
+    padding: 15px 18px;
+}
+
+nav a {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #72c6f0;
+}
+
+
+/* =====================================
+   HERO SECTION
+===================================== */
+
+.hero {
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+    background: linear-gradient(
+        110deg,
+        #102c54,
+        #21639b
+    );
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.category {
+    font-size: 12px;
+    font-weight: bold;
+    color: #3288c5;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.hero .category {
+    color: #a8dcfa;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 18px;
+    max-width: 550px;
+    margin-bottom: 30px;
+    color: #e5eff8;
+}
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.main-button {
+    display: inline-block;
+    background-color: #f2bd32;
+    color: #102c54;
+    padding: 13px 28px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.main-button:hover {
+    background-color: #ffd66b;
+}
+
+
+/* =====================================
+   LEARNING LEVELS
+===================================== */
+
+.learning-levels {
+    padding: 70px 8%;
+    background-color: #f5f7fa;
+}
+
+.learning-levels h2,
+.section-heading h2 {
+    font-size: 30px;
+    color: #102c54;
+    margin-bottom: 35px;
+}
+
+.levels-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.level-card {
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #e2e6eb;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #00000012;
+}
+
+.level-label {
+    display: inline-block;
+    background-color: #e5f2fc;
+    color: #21639b;
+    font-weight: bold;
+    padding: 5px 12px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.level-card h3 {
+    color: #102c54;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.level-card p {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.level-card a {
+    color: #2878b8;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   FEATURED CONTENT
+===================================== */
+
+.featured {
+    padding: 70px 8%;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading p {
+    color: #777777;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.content-card {
+    border: 1px solid #e2e6eb;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.content-card:hover {
+    box-shadow: 0 8px 20px #00000012;
+}
+
+.card-image {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.image-news {
+    background: linear-gradient(135deg, #244e73, #4b8dbb);
+}
+
+.image-grammar {
+    background: linear-gradient(135deg, #355b87, #7aa5cb);
+}
+
+.image-stories {
+    background: linear-gradient(135deg, #65547f, #a38bbd);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    color: #102c54;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.card-content p:not(.category) {
+    color: #666666;
+    margin-bottom: 18px;
+}
+
+.card-content a {
+    color: #2878b8;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   VIDEO SECTION
+===================================== */
+
+.video-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 70px 8%;
+    background-color: #f5f7fa;
+}
+
+.video-text h2 {
+    color: #102c54;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.video-text p:not(.category) {
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+.video-placeholder {
+    min-height: 250px;
+    background-color: #102c54;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.play-button {
+    background-color: #f2bd32;
+    color: #102c54;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================
+   PODCAST SECTION
+===================================== */
+
+.podcast-section {
+    padding: 70px 10%;
+    background-color: #ffffff;
+}
+
+.podcast-section h2 {
+    color: #102c54;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.podcast-section p:not(.category) {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.podcast-section a {
+    color: #2878b8;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   NEWSLETTER
+===================================== */
+
+.newsletter {
+    background-color: #eaf2f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.newsletter h2 {
+    color: #102c54;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.newsletter p {
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    background-color: #102c54;
+    color: white;
+    padding: 45px 8% 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.footer-logo h3 {
+    font-size: 20px;
+}
+
+.footer-logo span {
+    display: block;
+    color: #72c6f0;
+    letter-spacing: 3px;
+}
+
+.footer-logo p {
+    color: #bdcde0;
+    margin-top: 10px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.copyright {
+    border-top: 1px solid #49617e;
+    padding-top: 20px;
+    text-align: center;
+    color: #bdcde0;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 768px) {
+
+    .top-bar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav li {
+        padding: 12px;
+    }
+
+    .hero {
+        padding: 60px 8%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .levels-container,
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-section {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+}
