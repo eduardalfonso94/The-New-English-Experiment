@@ -2,17 +2,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="The New Language Experiment - Learn English through stories, news, videos and interactive activities.">
+        content="The New Language Experiment - Learn English through structured courses, interactive practice, stories, culture, videos and podcasts.">
 
     <title>The New Language Experiment</title>
+
+    <!-- MAIN STYLES -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- FLOATING NAVIGATION MENU -->
+    <link rel="stylesheet" href="floating-menu.css">
+    <script src="floating-menu.js" defer></script>
+
 </head>
 
 <body>
@@ -23,41 +29,60 @@
         <div class="top-bar">
 
             <div class="logo">
-                <a href="#">
-                    THE NEW LANGUAGE
-                    <span>EXPERIMENT</span>
+                <a href="#home">
+                    <img
+                        src="images/header-world-map.png"
+                        alt="The New Language Experiment"
+                    >
                 </a>
             </div>
+            <div class="header-actions">
 
-            <div class="header-links">
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
+                <a href="courses/courses.html" class="header-start-button">
+                    Start Learning
+                    <span>→</span>
+                </a>
+
+                <div class="header-links">
+                   <a href="about/about.html">About Us</a>
+                   <a href="#contact">Contact</a>
+                </div>
+
             </div>
 
         </div>
 
-        <!-- NAVIGATION -->
+        <!-- MAIN NAVIGATION -->
         <nav>
-
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#beginner">Beginning</a></li>
-                <li><a href="#intermediate">Intermediate</a></li>
-                <li><a href="#advanced">Advanced</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#podcasts">Podcasts</a></li>
+                <li><a href="courses/courses.html">Courses</a></li>
+                <li><a href="practice/practice.html">Practice</a></li>
+                <li><a href="explore/explore.html">Explore</a></li>
+                <li><a href="videos/videos.html">Videos</a></li>
+                <li><a href="podcasts/podcasts.html">Podcasts</a></li>
+                <li><a href="about/about.html">About Us</a></li>
             </ul>
-
         </nav>
 
     </header>
 
 
-    <!-- MAIN CONTENT -->
     <main>
 
-        <!-- HERO SECTION -->
-        <section id="home" class="hero">
+        <!-- HOME -->
+        
+         <section id="home" class="hero">
+            <div class="hero-background" aria-hidden="true">
+
+                <img src="images/londres.jpeg" alt="">
+                <img src="images/nueva%20york.jpeg" alt="">
+                <img src="images/toronto.jpeg" alt="">
+                <img src="images/sidney.jpeg" alt="">
+                <img src="images/persona%201.png" alt="">
+                <img src="images/persona%202.png" alt="">
+  
+            </div>
 
             <div class="hero-content">
 
@@ -72,290 +97,499 @@
                 </h1>
 
                 <p class="hero-description">
-                    Explore stories, news, culture and ideas
-                    while improving your English skills.
+                    Develop your English skills through structured courses,
+                    interactive activities, stories, culture and real-world content.
                 </p>
 
-                <a href="#beginner" class="main-button">
-                    Start Learning
+                
+<div class="hero-cta-group">
+
+    <a href="courses/courses.html" class="main-button">
+        Start Learning
+    </a>
+
+    <a href="diagnostic/diagnostic.html" class="diagnostic-button">
+        <span class="diagnostic-icon">✦</span>
+        Test Your English Level
+        <span class="diagnostic-arrow">→</span>
+    </a>
+
+</div>
+
+            </div>
+
+         </section>
+        
+<!-- COURSE STRUCTURE -->
+<section id="course-details" class="featured">
+
+    <div class="section-heading">
+        <p class="category">STRUCTURED LEARNING</p>
+        <h2>Learn Step by Step</h2>
+        <p>
+            Each course is organized into units and lessons
+            that help you develop your English progressively.
+        </p>
+    </div>
+
+    <div class="content-grid">
+
+        <!-- BEGINNER -->
+        <article class="content-card">
+            <div class="course-card-image">
+                <img src="images/level%201.png"
+                     alt="Beginner English learner">
+            </div>
+
+            <div class="card-content">
+                <p class="category">A1 COURSE · BEGINNER</p>
+                <h3>Start with the Basics</h3>
+                <p>
+                    Learn greetings, personal information,
+                    countries, numbers, daily routines and more.
+                </p>
+                <a href="#beginner">Explore A1-A2 →</a>
+            </div>
+        </article>
+
+        <!-- INTERMEDIATE -->
+        <article class="content-card">
+            <div class="course-card-image">
+                <img src="images/level%202.png"
+                     alt="Intermediate English students communicating">
+            </div>
+
+            <div class="card-content">
+                <p class="category">B1-B2 COURSE · INTERMEDIATE</p>
+                <h3>Develop Your Fluency</h3>
+                <p>
+                    Improve your ability to communicate,
+                    understand texts and express your opinions.
+                </p>
+                <a href="#intermediate">Explore B1-B2 →</a>
+            </div>
+        </article>
+
+        <!-- ADVANCED -->
+        <article class="content-card">
+            <div class="course-card-image">
+                <img src="images/level%203.png"
+                     alt="Advanced English learner studying">
+            </div>
+
+            <div class="card-content">
+                <p class="category">C1-C2 COURSE · ADVANCED</p>
+                <h3>Master Advanced English</h3>
+                <p>
+                    Work with authentic materials,
+                    complex vocabulary and advanced language structures.
+                </p>
+                <a href="#advanced">Explore C1-C2 →</a>
+            </div>
+        </article>
+
+    </div>
+</section>
+        
+<!-- PRACTICE SECTION -->
+
+<section id="practice" class="featured">
+
+    <div class="section-heading">
+
+        <p class="category">LEARN BY DOING</p>
+
+        <h2>Practice Your English</h2>
+
+        <p>
+            Strengthen your skills with activities
+            you can explore independently.
+        </p>
+
+    </div>
+
+    <div class="practice-bento">
+
+        <!-- GRAMMAR -->
+
+        <article class="bento-card bento-grammar">
+
+            <div class="bento-icon" aria-hidden="true">✦</div>
+
+            <div class="bento-content">
+
+                <p class="bento-category">GRAMMAR</p>
+
+                <h3>Grammar Practice</h3>
+
+                <p>
+                    Understand English structures
+                    through explanations and practical exercises.
+                </p>
+
+                <a href="practice/practice.html#grammar-activities"
+                   class="bento-link">
+                    Explore grammar <span aria-hidden="true">→</span>
                 </a>
 
             </div>
 
-        </section>
+        </article>
 
+        <!-- VOCABULARY -->
 
-        <!-- LEARNING LEVELS -->
-        <section class="learning-levels">
+        <article class="bento-card bento-vocabulary">
 
-            <h2>Choose Your Learning Level</h2>
+            <div class="bento-icon" aria-hidden="true">Aa</div>
 
-            <div class="levels-container">
+            <div class="bento-content">
 
-                <article id="beginner" class="level-card">
+                <p class="bento-category">VOCABULARY</p>
 
-                    <span class="level-label">
-                        A1 - A2
-                    </span>
-
-                    <h3>Beginning Level</h3>
-
-                    <p>
-                        Build your foundations with
-                        simple stories, vocabulary
-                        and everyday expressions.
-                    </p>
-
-                    <a href="#">
-                        Explore lessons →
-                    </a>
-
-                </article>
-
-
-                <article id="intermediate" class="level-card">
-
-                    <span class="level-label">
-                        B1 - B2
-                    </span>
-
-                    <h3>Intermediate Level</h3>
-
-                    <p>
-                        Improve your fluency through
-                        real-world topics, reading
-                        and listening activities.
-                    </p>
-
-                    <a href="#">
-                        Explore lessons →
-                    </a>
-
-                </article>
-
-
-                <article id="advanced" class="level-card">
-
-                    <span class="level-label">
-                        C1 - C2
-                    </span>
-
-                    <h3>Advanced Level</h3>
-
-                    <p>
-                        Explore complex ideas,
-                        authentic materials
-                        and advanced vocabulary.
-                    </p>
-
-                    <a href="#">
-                        Explore lessons →
-                    </a>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- FEATURED CONTENT -->
-        <section class="featured">
-
-            <div class="section-heading">
-
-                <h2>Explore and Learn</h2>
+                <h3>Build Your Vocabulary</h3>
 
                 <p>
-                    Discover new ways to improve your English.
+                    Discover new words and expressions
+                    and learn how to use them in context.
                 </p>
 
-            </div>
-
-
-            <div class="content-grid">
-
-                <article class="content-card">
-
-                    <div class="card-image image-news">
-                        <span>NEWS</span>
-                    </div>
-
-                    <div class="card-content">
-
-                        <p class="category">
-                            READING
-                        </p>
-
-                        <h3>
-                            Breaking News
-                        </h3>
-
-                        <p>
-                            Read interesting stories
-                            and discover new vocabulary
-                            through current events.
-                        </p>
-
-                        <a href="#">
-                            Read more →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article class="content-card">
-
-                    <div class="card-image image-grammar">
-                        <span>GRAMMAR</span>
-                    </div>
-
-                    <div class="card-content">
-
-                        <p class="category">
-                            LANGUAGE
-                        </p>
-
-                        <h3>
-                            English in a Minute
-                        </h3>
-
-                        <p>
-                            Learn useful expressions,
-                            grammar rules and
-                            everyday English.
-                        </p>
-
-                        <a href="#">
-                            Learn more →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article class="content-card">
-
-                    <div class="card-image image-stories">
-                        <span>STORIES</span>
-                    </div>
-
-                    <div class="card-content">
-
-                        <p class="category">
-                            CULTURE
-                        </p>
-
-                        <h3>
-                            Words and Their Stories
-                        </h3>
-
-                        <p>
-                            Discover the fascinating
-                            stories behind English
-                            words and expressions.
-                        </p>
-
-                        <a href="#">
-                            Discover stories →
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- VIDEO SECTION -->
-        <section id="videos" class="video-section">
-
-            <div class="video-text">
-
-                <p class="category">
-                    WATCH AND LEARN
-                </p>
-
-                <h2>
-                    English Through Videos
-                </h2>
-
-                <p>
-                    Improve your listening and pronunciation
-                    with short educational videos.
-                </p>
-
-                <a href="#" class="main-button">
-                    Explore Videos
+                <a href="practice/practice.html"
+                   class="bento-link">
+                    Explore vocabulary <span aria-hidden="true">→</span>
                 </a>
 
             </div>
 
-            <div class="video-placeholder">
+        </article>
 
-                <div class="play-button">
-                    ▶
-                </div>
+        <!-- READING AND LISTENING -->
 
-                <p>
-                    Your next learning experience
-                    starts here.
-                </p>
+        <article class="bento-card bento-skills">
 
-            </div>
+            <div class="bento-icon" aria-hidden="true">♫</div>
 
-        </section>
+            <div class="bento-content">
 
+                <p class="bento-category">SKILLS</p>
 
-        <!-- PODCAST SECTION -->
-        <section id="podcasts" class="podcast-section">
-
-            <div>
-
-                <p class="category">
-                    LISTEN EVERYWHERE
-                </p>
-
-                <h2>
-                    The Language Experiment Podcast
-                </h2>
+                <h3>Reading and Listening</h3>
 
                 <p>
-                    Listen to stories, conversations
-                    and ideas in English.
+                    Improve your comprehension
+                    with activities for different proficiency levels.
                 </p>
 
-                <a href="#">
-                    Discover our podcasts →
+                <a href="practice/practice.html"
+                   class="bento-link">
+                    Start practicing <span aria-hidden="true">→</span>
                 </a>
 
             </div>
 
-        </section>
+        </article>
+
+    </div>
+
+</section>
+
+        
+<!-- EXPLORE THE WORLD -->
+<section id="explore" class="explore-editorial">
+
+    <div class="section-heading">
+        <p class="category">DISCOVER THE WORLD</p>
+        <h2>Explore the World Through English</h2>
+        <p>
+            Discover global stories, fascinating cultures and the
+            history of language while developing your English.
+        </p>
+    </div>
+
+    <div class="editorial-container">
+
+        <!-- FEATURED NEWS -->
+        <article class="editorial-feature">
+
+            
+<div class="editorial-feature-image">
+    <img
+        src="images/london-news.jpg"
+        alt="A red double-decker bus on a London street"
+        loading="lazy"
+    >
+
+    <span class="editorial-photo-tag">
+        GLOBAL PERSPECTIVES
+    </span>
+</div>
+
+            <div class="editorial-feature-content">
+                <p class="editorial-label">01 / CURRENT EVENTS</p>
+
+                <h3>Breaking News</h3>
+
+                <p>
+                    Explore current events and discover how English
+                    connects you with the world around you.
+                </p>
+
+                <span class="editorial-topic">
+                    NEWS &amp; CURRENT EVENTS
+                </span>
+            </div>
+
+        </article>
+
+        <!-- CULTURE -->
+        <article class="editorial-story editorial-culture">
+
+            <div class="editorial-story-content">
+                <p class="editorial-label">02 / CULTURE</p>
+
+                <h3>Stories from Around the World</h3>
+
+                <p>
+                    Discover traditions, cultural perspectives and
+                    fascinating stories from communities across the globe.
+                </p>
+
+                <span class="editorial-topic">
+                    CULTURE &amp; TRADITIONS
+                </span>
+            </div>
+
+            
+<div class="editorial-story-image">
+    <img
+        src="images/culture.jpeg"
+        alt="A cultural celebration"
+        loading="lazy"
+    >
+
+    <span class="editorial-photo-tag">
+        CULTURAL CONNECTIONS
+    </span>
+</div>
+
+        </article>
+
+        <!-- WORDS -->
+        <article class="editorial-story editorial-words">
+
+            
+<div class="editorial-story-image">
+    <img
+        src="images/words.jpeg"
+        alt="Books and a dictionary for exploring language"
+        loading="lazy"
+    >
+
+    <span class="editorial-photo-tag">
+        LANGUAGE DISCOVERIES
+    </span>
+</div>
+
+            <div class="editorial-story-content">
+                <p class="editorial-label">03 / LANGUAGE</p>
+
+                <h3>Words and Their Stories</h3>
+
+                <p>
+                    Explore the origins, meanings and fascinating
+                    journeys of words across languages and cultures.
+                </p>
+
+                <span class="editorial-topic">
+                    WORDS &amp; MEANINGS
+                </span>
+            </div>
+
+        </article>
+
+<!-- EDITORIAL CLOSING -->
+<div class="editorial-closing">
+
+    <span class="editorial-closing-symbol" aria-hidden="true">
+        ✦
+    </span>
+
+    <p>
+        Every language opens a window to the world.
+    </p>
+
+    <span class="editorial-closing-line" aria-hidden="true"></span>
+
+</div>
+
+    </div>
+
+</section>
+
+        
+<!-- VIDEOS -->
+<section id="videos" class="video-section video-showcase">
+
+    <div class="video-text">
+
+        <p class="category">WATCH AND LEARN</p>
+
+        <h2>English Through Videos</h2>
+
+        <p>
+            Improve your listening, pronunciation and
+            vocabulary through engaging video lessons
+            for every stage of your learning journey.
+        </p>
+            <a href="videos/videos.html" class="video-discover-button">
+              <span class="video-button-icon" aria-hidden="true">▶</span>
+              <span>LET'S WATCH</span>
+              <span class="video-button-arrow" aria-hidden="true">→</span>
+            </a>
+    </div>
+
+    <div class="video-gallery">
+
+        <div class="video-gallery-main">
+            <img
+                src="images/video-main.png"
+                alt="Learning English through video lessons"
+                loading="lazy"
+            >
+            <span class="video-gallery-caption">
+                EVERYDAY ENGLISH
+            </span>
+        </div>
+
+        <div class="video-gallery-bottom">
+
+            <div class="video-gallery-small">
+                <img
+                    src="images/video-vocabulary.png"
+                    alt="English vocabulary learning materials"
+                    loading="lazy"
+                >
+                <span>VOCABULARY</span>
+            </div>
+
+            <div class="video-gallery-small">
+                <img
+                    src="images/video-speaking.png"
+                    alt="People practicing spoken English"
+                    loading="lazy"
+                >
+                <span>COMMUNICATION</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-        <!-- NEWSLETTER -->
-        <section class="newsletter">
+<!-- PODCASTS -->
+<section id="podcasts" class="podcast-section podcast-banner">
+
+    <div class="podcast-banner-content">
+
+        <p class="category">LISTEN AND DISCOVER</p>
+
+        <h2>The Language Experiment Podcast</h2>
+
+        <p class="podcast-description">
+            Listen to stories, conversations and cultural
+            perspectives in English. Discover new ideas
+            and learn at your own pace.
+        </p>
+
+        
+<div class="podcast-topics">
+
+    <a href="podcasts/podcasts.html" class="podcast-topic podcast-listen-button">
+
+        <span class="podcast-topic-icon" aria-hidden="true">♫</span>
+
+        <span>TUNE IN &amp; EXPLORE</span>
+
+        <span class="podcast-button-arrow" aria-hidden="true">→</span>
+
+    </a>
+
+</div>
+
+    </div>
+
+</section>
+       
+<!-- ABOUT -->
+<section id="about" class="featured">
+
+    <div class="about-home-inner">
+
+        <div class="section-heading">
+
+            <p class="category">
+                <a href="about/about.html"
+                   class="about-project-link">
+                    ABOUT THE PROJECT
+                </a>
+            </p>
 
             <h2>
-                Keep Learning With Us
+                Language Is More
+                <span>Than Words.</span>
             </h2>
 
             <p>
-                Your journey to better English
-                starts with one small step.
+                The New Language Experiment is a space for
+                learning English through communication,
+                culture, knowledge and meaningful experiences.
+
+                We believe that learning a language is also
+                an opportunity to discover different ways
+                of seeing the world.
             </p>
 
-            <a href="#home" class="main-button">
-                Start Your Journey
-            </a>
+            <div class="about-home-signature">
+                <span></span>
+                LEARN · EXPLORE · CONNECT
+            </div>
 
-        </section>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT / NEWSLETTER -->
+<section id="contact" class="newsletter">
+
+    <div class="newsletter-inner">
+
+        <p class="newsletter-eyebrow">
+            YOUR NEXT CHAPTER STARTS HERE
+        </p>
+
+        <h2>
+            Keep Learning
+            <span>With Us.</span>
+        </h2>
+
+        <p>
+            Your journey to better English
+            starts with one small step.
+        </p>
+
+        <a href="courses/courses.html"
+           class="main-button">
+            Start Your Journey
+            <span aria-hidden="true">→</span>
+        </a>
+
+    </div>
+
+</section>
 
     </main>
 
@@ -379,16 +613,21 @@
 
             </div>
 
+
             <div class="footer-links">
 
                 <a href="#home">Home</a>
-                <a href="#beginner">Learning Levels</a>
-                <a href="#videos">Videos</a>
-                <a href="#podcasts">Podcasts</a>
+                <a href="courses/courses.html">Courses</a>
+                <a href="practice/practice.html">Practice</a>
+                <a href="explore/explore.html">Explore</a>
+                <a href="videos/videos.html">Videos</a>
+                <a href="podcasts/podcasts.html">Podcasts</a>
+                <a href="about/about.html">About Us</a>
 
             </div>
 
         </div>
+
 
         <div class="copyright">
 
@@ -400,6 +639,8 @@
         </div>
 
     </footer>
+
+
     <script src="script.js"></script>
 
 </body>

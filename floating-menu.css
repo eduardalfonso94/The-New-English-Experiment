@@ -1,0 +1,425 @@
+
+/* ==========================================
+   FLOATING NAVIGATION MENU
+   THE NEW LANGUAGE EXPERIMENT
+========================================== */
+
+.floating-menu-toggle {
+    position: fixed;
+    top: 22px;
+    right: 24px;
+    z-index: 10001;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 15px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(90,140,190,.72),
+        rgba(16,44,84,.82)
+    );
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        inset 0 2px 2px rgba(255,255,255,.5),
+        inset 0 -2px 4px rgba(0,0,0,.2),
+        0 8px 20px rgba(0,0,0,.24);
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.floating-menu-toggle:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        inset 0 2px 3px rgba(255,255,255,.65),
+        0 12px 28px rgba(0,0,0,.3);
+}
+
+/* THREE LINES */
+
+.floating-menu-toggle span {
+    display: block;
+
+    width: 23px;
+    height: 2.5px;
+
+    border-radius: 5px;
+    background: white;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+/* ANIMATED X */
+
+.floating-menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.floating-menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.floating-menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ==========================================
+   FLOATING PANEL
+========================================== */
+
+.floating-menu-panel {
+    position: fixed;
+    top: 86px;
+    right: 24px;
+    z-index: 10000;
+
+    width: min(310px, calc(100vw - 32px));
+    max-height: calc(100dvh - 105px);
+
+    overflow-y: auto;
+
+    padding: 22px;
+
+    border-radius: 19px;
+    border: 1px solid rgba(255,255,255,.28);
+
+    background: linear-gradient(
+        155deg,
+        rgba(21,54,94,.96),
+        rgba(9,28,55,.97)
+    );
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,.2),
+        0 20px 45px rgba(0,0,0,.3);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(35px) scale(.97);
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease,
+        transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+.floating-menu-panel.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+}
+
+.floating-menu-title {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: #F2BD54;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.floating-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.floating-menu-links a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 12px 13px;
+
+    border-radius: 9px;
+
+    color: #E9F1F8;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+}
+
+.floating-menu-links a:hover {
+    background: rgba(255,255,255,.12);
+    color: #F2BD54;
+    transform: translateX(5px);
+}
+
+.floating-menu-links a:focus-visible,
+.floating-menu-toggle:focus-visible {
+    outline: 3px solid #F2BD54;
+    outline-offset: 3px;
+}
+
+.floating-link-icon {
+    display: inline-flex;
+    justify-content: center;
+
+    width: 20px;
+    font-size: 16px;
+}
+
+/* DIAGNOSTIC BUTTON */
+
+.floating-menu-links .floating-diagnostic-link {
+    margin-top: 12px;
+
+    background: linear-gradient(
+        180deg,
+        #FFE5A1,
+        #F2BD54,
+        #D99A2D
+    );
+
+    color: #102C54;
+    font-weight: 800;
+
+    box-shadow:
+        inset 0 2px 2px rgba(255,255,255,.65),
+        0 4px 0 #9F6D20,
+        0 8px 18px rgba(0,0,0,.2);
+}
+
+.floating-menu-links .floating-diagnostic-link:hover {
+    background: linear-gradient(
+        180deg,
+        #FFF0BE,
+        #F5C769,
+        #E3A83C
+    );
+
+    color: #102C54;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .floating-menu-toggle {
+        top: 15px;
+        right: 4px;
+
+        width: 46px;
+        height: 46px;
+    }
+
+    .floating-menu-panel {
+        top: 72px;
+        right: 15px;
+
+        padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-menu-toggle,
+    .floating-menu-toggle span,
+    .floating-menu-panel,
+    .floating-menu-links a {
+        transition: none;
+    }
+}
+
+
+/* ==========================================
+   FLOATING MENU — PREMIUM GLASS REFINEMENT
+========================================== */
+
+/* 1. MORE TRANSPARENT AND BRIGHTER BUTTON */
+
+.floating-menu-toggle {
+    background: linear-gradient(
+        145deg,
+        rgba(175, 220, 255, 0.42) 0%,
+        rgba(75, 150, 215, 0.30) 45%,
+        rgba(16, 65, 120, 0.48) 100%
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.72);
+
+    backdrop-filter: blur(18px) saturate(170%);
+    -webkit-backdrop-filter: blur(18px) saturate(170%);
+
+    box-shadow:
+        inset 0 2px 3px rgba(255, 255, 255, 0.70),
+        inset 0 -3px 6px rgba(15, 55, 105, 0.16),
+        0 5px 18px rgba(20, 75, 130, 0.20),
+        0 0 12px rgba(155, 215, 255, 0.18);
+
+    overflow: hidden;
+}
+
+/* Delicate glass reflection */
+
+.floating-menu-toggle::before {
+    content: "";
+    position: absolute;
+
+    top: 3px;
+    left: 7px;
+    right: 7px;
+    height: 42%;
+
+    border-radius: 12px 12px 45% 45%;
+
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.34),
+        rgba(255, 255, 255, 0)
+    );
+
+    pointer-events: none;
+}
+
+.floating-menu-toggle:hover {
+    background: linear-gradient(
+        145deg,
+        rgba(190, 230, 255, 0.52),
+        rgba(70, 150, 220, 0.42),
+        rgba(20, 75, 135, 0.54)
+    );
+
+    box-shadow:
+        inset 0 2px 4px rgba(255, 255, 255, 0.78),
+        0 10px 25px rgba(20, 75, 130, 0.25),
+        0 0 20px rgba(155, 215, 255, 0.30);
+}
+
+.floating-menu-toggle span {
+    position: relative;
+    z-index: 1;
+
+    background: #FFFFFF;
+
+    box-shadow:
+        0 1px 3px rgba(0, 40, 85, 0.30),
+        0 0 5px rgba(255, 255, 255, 0.25);
+}
+
+/* 2. TRANSLUCENT BLUE NAVIGATION PANEL */
+
+.floating-menu-panel {
+    background: linear-gradient(
+        145deg,
+        rgba(47, 112, 171, 0.84) 0%,
+        rgba(25, 77, 132, 0.88) 50%,
+        rgba(12, 45, 91, 0.91) 100%
+    );
+
+    border: 1px solid rgba(205, 232, 255, 0.38);
+
+    backdrop-filter: blur(24px) saturate(155%);
+    -webkit-backdrop-filter: blur(24px) saturate(155%);
+
+    box-shadow:
+        inset 0 2px 3px rgba(255, 255, 255, 0.22),
+        inset 1px 0 2px rgba(255, 255, 255, 0.10),
+        0 18px 42px rgba(10, 35, 75, 0.27),
+        0 0 18px rgba(130, 195, 245, 0.08);
+}
+
+/* 3. SOFTER NAVIGATION LINKS */
+
+.floating-menu-links a {
+    color: rgba(255, 255, 255, 0.94);
+    font-weight: 500;
+}
+
+.floating-menu-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.12);
+}
+
+/* 4. ELEGANT, COMPACT DIAGNOSTIC LINK */
+
+.floating-menu-links .floating-diagnostic-link {
+    margin-top: 9px;
+    padding: 10px 12px;
+
+    border: 1px solid rgba(255, 222, 156, 0.45);
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 222, 151, 0.18),
+        rgba(235, 180, 75, 0.10)
+    );
+
+    color: #FFE5AE;
+    font-size: 12px;
+    font-weight: 600;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.10),
+        0 3px 9px rgba(0, 0, 0, 0.08);
+}
+
+.floating-menu-links .floating-diagnostic-link:hover {
+    background: rgba(245, 196, 102, 0.23);
+
+    color: #FFFFFF;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.18),
+        0 5px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================
+   FLOATING MENU — POSITION REFINEMENT
+========================================== */
+
+/* Desktop */
+.floating-menu-toggle {
+    right: 14px;
+}
+
+.floating-menu-panel {
+    right: 14px;
+}
+
+/* Small screens and mobile */
+@media (max-width: 600px) {
+
+    .floating-menu-toggle {
+        right: 4px;
+    }
+
+    .floating-menu-panel {
+        right: 6px;
+    }
+
+}

@@ -1,0 +1,542 @@
+
+/* ==========================================
+   EXPLORE MAGAZINE
+   THE NEW LANGUAGE EXPERIMENT
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
+:root {
+    --paper: #F5F1E9;
+    --ink: #172F3A;
+    --muted: #64717A;
+    --gold: #B88B49;
+    --line: #D4CEC3;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* ==========================================
+   EDITORIAL HEADER
+========================================== */
+
+.explore-header {
+    background: var(--paper);
+    padding: 0 7%;
+}
+
+.explore-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid var(--line);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.explore-masthead {
+    text-align: center;
+    padding: 28px 0 24px;
+}
+
+.explore-logo {
+    display: inline-block;
+
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(60px, 9vw, 116px);
+    font-weight: 600;
+    letter-spacing: -5px;
+    line-height: 1;
+
+    color: var(--ink);
+    text-decoration: none;
+
+    transition: color .35s ease;
+}
+
+.explore-logo:hover {
+    color: var(--gold);
+}
+
+.explore-masthead p {
+    margin-top: 13px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+
+    color: var(--muted);
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.explore-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 38px;
+    padding: 19px 15px;
+
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--line);
+}
+
+.explore-nav a {
+    position: relative;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+
+    color: var(--ink);
+    text-decoration: none;
+
+    transition: color .3s ease;
+}
+
+.explore-nav a::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: width .35s ease;
+}
+
+.explore-nav a:hover,
+.explore-nav a.active {
+    color: var(--gold);
+}
+
+.explore-nav a:hover::after,
+.explore-nav a.active::after {
+    width: 100%;
+}
+
+/* ==========================================
+   MAGAZINE COVER
+========================================== */
+
+.explore-cover {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+
+    max-width: 1500px;
+    margin: 45px auto 70px;
+    padding: 0 7%;
+
+    min-height: 490px;
+}
+
+.cover-image {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 490px;
+}
+
+.cover-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 1.2s ease;
+}
+
+.cover-image:hover img {
+    transform: scale(1.045);
+}
+
+.cover-image-label {
+    position: absolute;
+    bottom: 24px;
+    left: 25px;
+
+    background: rgba(255,255,255,.92);
+    padding: 11px 16px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: var(--ink);
+}
+
+/* Cover editorial content */
+
+.cover-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 55px 9%;
+
+    background: #EAE4D8;
+}
+
+.cover-category {
+    color: #9B713B;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    margin-bottom: 24px;
+}
+
+.cover-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 60px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+
+    margin-bottom: 24px;
+}
+
+.cover-content h1 em {
+    display: block;
+    color: #9A7347;
+    font-weight: 500;
+}
+
+.cover-content > p {
+    max-width: 500px;
+
+    font-size: 15px;
+    line-height: 1.9;
+    color: #58666B;
+
+    margin-bottom: 35px;
+}
+
+/* Cover footer */
+
+.cover-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.cover-footer > span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #92764F;
+}
+
+/* Editorial button */
+
+.cover-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 15px 23px;
+
+    background: var(--ink);
+    color: var(--white);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .5px;
+
+    text-decoration: none;
+    border-radius: 4px;
+
+    box-shadow: 0 4px 0 #0C1C23,
+                0 9px 16px rgba(0,0,0,.14);
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
+}
+
+.cover-button span {
+    font-size: 19px;
+    transition: transform .35s ease;
+}
+
+.cover-button:hover {
+    background: #275467;
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 0 #0C1C23,
+                0 15px 24px rgba(0,0,0,.2);
+}
+
+.cover-button:hover span {
+    transform: translateX(5px);
+}
+
+.cover-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #0C1C23;
+}
+
+/* ==========================================
+   FUTURE STORIES SECTION
+========================================== */
+
+.explore-stories {
+    padding: 75px 7% 95px;
+    background: #FFFFFF;
+}
+
+.stories-heading {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.stories-heading > span {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.stories-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+
+    margin: 17px 0;
+}
+
+.stories-heading p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.explore-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 15px;
+    padding: 30px 7%;
+
+    background: var(--ink);
+    color: var(--white);
+}
+
+.explore-footer p {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.explore-footer span {
+    font-size: 11px;
+    color: #C5D1D5;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .explore-cover {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+
+    .cover-image {
+        min-height: 380px;
+    }
+
+    .cover-content {
+        padding: 45px 7%;
+    }
+
+    .explore-nav {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .explore-header {
+        padding: 0 5%;
+    }
+
+    .explore-topline {
+        font-size: 8px;
+        letter-spacing: 1px;
+        gap: 15px;
+    }
+
+    .explore-topline span:last-child {
+        text-align: right;
+    }
+
+    .explore-logo {
+        font-size: 65px;
+        letter-spacing: -3px;
+    }
+
+    .explore-masthead p {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .explore-nav {
+        gap: 17px;
+    }
+
+    .explore-nav a {
+        font-size: 10px;
+    }
+
+    .explore-cover {
+        padding: 0 5%;
+        margin-bottom: 45px;
+    }
+
+    .cover-image {
+        min-height: 290px;
+    }
+
+    .cover-content {
+        padding: 35px 7%;
+    }
+
+    .cover-content h1 {
+        font-size: 38px;
+    }
+
+    .explore-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .explore-logo,
+    .explore-nav a,
+    .explore-nav a::after,
+    .cover-image img,
+    .cover-button,
+    .cover-button span {
+        transition: none;
+    }
+}
+/* MAGAZINE SUBTITLE */
+
+.magazine-subtitle {
+    display: block;
+    margin-top: 6px;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+
+    text-align: right;
+    color: #b88b4d;
+}
+/* MAGAZINE BRAND */
+
+.magazine-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    text-align: right;
+}
+
+.magazine-name {
+    display: block;
+    white-space: nowrap;
+}
+
+.magazine-subtitle {
+    display: block;
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #b88b4d;
+}
+
+/* ==========================================
+   FAST NAVIGATION ENTRANCE
+   LEFT TO RIGHT - 0.55 SECONDS
+========================================== */
+
+.explore-nav,
+.video-nav,
+.podcast-nav,
+.about-nav {
+    animation: interiorNavReveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: 0s;
+}
+
+@keyframes interiorNavReveal {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .explore-nav,
+    .video-nav,
+    .podcast-nav,
+    .about-nav {
+        animation: none;
+    }
+}

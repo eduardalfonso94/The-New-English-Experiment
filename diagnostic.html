@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Discover your English level with The New Language Experiment adaptive placement test.">
+
+    <title>
+        English Level Test | The New Language Experiment
+    </title>
+
+    <!-- DIAGNOSTIC STYLES -->
+    <link rel="stylesheet" href="diagnostic.css">
+
+    <!-- DIAGNOSTIC JAVASCRIPT -->
+    <script src="diagnostic.js" defer></script>
+
+    <!-- FLOATING NAVIGATION MENU -->
+    <link rel="stylesheet" href="../floating-menu.css">
+    <script src="../floating-menu.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="diagnostic-header">
+
+        <div class="diagnostic-brand">
+            <a href="../index.html">
+                THE NEW LANGUAGE
+                <span>EXPERIMENT</span>
+            </a>
+        </div>
+
+        <div class="header-label">
+            ENGLISH LEVEL ASSESSMENT
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="diagnostic-nav"
+         aria-label="Main navigation">
+
+        <a href="../index.html">Home</a>
+
+        <a href="../courses/courses.html">Courses</a>
+
+        <a href="../practice/practice.html">Practice</a>
+
+        <a href="../explore/explore.html">Explore</a>
+
+        <a href="../videos/videos.html">Videos</a>
+
+        <a href="../podcasts/podcasts.html">Podcasts</a>
+
+        <a href="../about/about.html">About Us</a>
+
+    </nav>
+
+
+    <main>
+
+        <!-- INTRODUCTION -->
+        <section class="diagnostic-intro"
+                 id="diagnostic-intro">
+
+            <div class="intro-content">
+
+                <span class="diagnostic-eyebrow">
+                    YOUR LEARNING JOURNEY STARTS HERE
+                </span>
+
+                <h1>
+                    Discover Your
+                    <span>English Level.</span>
+                </h1>
+
+                <p class="intro-description">
+                    Take our adaptive English placement test
+                    and discover where you stand.
+
+                    Each question adjusts to your performance,
+                    helping us estimate your English level
+                    and recommend the right learning path.
+                </p>
+
+                <div class="test-features">
+
+                    <div class="feature">
+                        <strong>Adaptive</strong>
+                        <span>Personalized difficulty</span>
+                    </div>
+
+                    <div class="feature">
+                        <strong>A1–C2</strong>
+                        <span>CEFR-based levels</span>
+                    </div>
+
+                    <div class="feature">
+                        <strong>Free</strong>
+                        <span>No registration required</span>
+                    </div>
+
+                </div>
+
+                <button class="start-test-button"
+                        id="startTestButton"
+                        type="button">
+
+                    Start the Test
+                    <span aria-hidden="true">→</span>
+
+                </button>
+
+                <p class="test-note">
+                    This assessment provides an estimated
+                    level, not an official CEFR certification.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INSTRUCTIONS -->
+        <section class="test-instructions"
+                 id="test-instructions">
+
+            <div class="section-heading">
+
+                <span class="section-eyebrow">
+                    BEFORE YOU BEGIN
+                </span>
+
+                <h2>How Does the Test Work?</h2>
+
+                <p>
+                    Our adaptive assessment changes
+                    difficulty according to your answers.
+                </p>
+
+            </div>
+
+            <div class="instructions-grid">
+
+                <article class="instruction-card">
+                    <span class="instruction-number">01</span>
+
+                    <h3>Answer Questions</h3>
+
+                    <p>
+                        Complete grammar, vocabulary
+                        and reading comprehension questions.
+                    </p>
+                </article>
+
+                <article class="instruction-card">
+                    <span class="instruction-number">02</span>
+
+                    <h3>Adaptive Difficulty</h3>
+
+                    <p>
+                        Correct answers may lead to more
+                        challenging questions, while incorrect
+                        answers help identify areas to improve.
+                    </p>
+                </article>
+
+                <article class="instruction-card">
+                    <span class="instruction-number">03</span>
+
+                    <h3>Discover Your Level</h3>
+
+                    <p>
+                        Receive an estimated English level
+                        and a recommended learning path.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- TEST INTERFACE -->
+        <section class="test-interface"
+                 id="test-interface"
+                 aria-labelledby="test-title"
+                 hidden>
+
+            <div class="test-container">
+
+                <div class="test-topbar">
+
+                    <span class="test-category">
+                        ADAPTIVE ASSESSMENT
+                    </span>
+
+                    <span id="questionCounter">
+                        Question 1
+                    </span>
+
+                </div>
+
+                <div class="progress-track"
+                     role="progressbar"
+                     aria-label="Test progress"
+                     aria-valuemin="0"
+                     aria-valuemax="100"
+                     aria-valuenow="0"
+                     id="progressTrack">
+
+                    <div class="progress-fill"
+                         id="progressFill"></div>
+
+                </div>
+
+                <div class="question-content">
+
+                    <span class="question-level"
+                          id="questionLevel">
+                        English Assessment
+                    </span>
+
+                    <h2 id="test-title">
+                        Choose the correct answer.
+                    </h2>
+
+                    <p id="questionText">
+                        Your first question will appear here.
+                    </p>
+
+                    <div class="answer-options"
+                         id="answerOptions">
+                    </div>
+
+                    <button class="next-question-button"
+                            id="nextQuestionButton"
+                            type="button"
+                            disabled>
+
+                        Continue
+                        <span aria-hidden="true">→</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+        <section class="test-results"
+                 id="test-results"
+                 aria-labelledby="results-title"
+                 hidden>
+
+            <div class="results-container">
+
+                <span class="results-eyebrow">
+                    ASSESSMENT COMPLETED
+                </span>
+
+                <h2 id="results-title">
+                    Your English Level
+                </h2>
+
+                <div class="result-level"
+                     id="resultLevel">
+                    --
+                </div>
+
+                <p id="resultDescription">
+                    Your personalized results
+                    will appear here.
+                </p>
+
+                <a href="../courses/courses.html"
+                   class="recommended-course-button"
+                   id="recommendedCourseButton">
+
+                    Explore Recommended Courses
+                    <span aria-hidden="true">→</span>
+
+                </a>
+
+                <button class="restart-test-button"
+                        id="restartTestButton"
+                        type="button">
+
+                    Take the Test Again
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="diagnostic-footer">
+
+        <div class="footer-brand">
+            THE NEW LANGUAGE EXPERIMENT
+        </div>
+
+        <p>
+            Learn English. Discover the World.
+        </p>
+
+        <span>
+            © 2026 The New Language Experiment
+        </span>
+
+    </footer>
+
+</body>
+</html>
