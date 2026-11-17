@@ -904,3 +904,114 @@ body {
         animation: none;
     }
 }
+
+
+/* ==========================================================
+   ABOUT US — VIOLET & YELLOW BRAND REFRESH (NOV 2026)
+   Layout, typography, photography and reveal animations kept.
+========================================================== */
+:root {
+    --navy: #241044;
+    --navy-dark: #1A0B34;
+    --blue: #7042D8;
+    --gold: #FFD447;
+    --cream: #F4F0FF;
+    --ink: #241044;
+    --muted: #665D78;
+    --white: #FFFFFF;
+}
+body { background: #F4F0FF; color: #241044; }
+.about-header, .about-topbar { background: #FFFFFF; }
+.about-brand { color: #241044; }
+.about-brand span { color: #7042D8; }
+.about-header-note { color: #6B6080; }
+.about-nav { background: #241044; }
+.about-nav a { color: #F7F4FF; }
+.about-nav a:hover, .about-nav a.active { color: #FFD447; }
+.about-nav a:hover {
+    background: linear-gradient(180deg, rgba(181,154,244,.27), rgba(112,66,216,.35));
+}
+.about-nav a::after { background: #FFD447; }
+
+/* Minimalist, bright hero with violet typography */
+.about-hero {
+    background: radial-gradient(circle at 85% 20%, rgba(181,154,244,.22), transparent 42%),
+                linear-gradient(120deg, #FBFAFF 0%, #F4F0FF 100%);
+    color: #241044;
+}
+.about-hero .eyebrow { color: #7042D8; }
+.about-hero-content h1 { color: #241044; }
+.about-hero-content h1 span { color: #7042D8; }
+.about-hero-content > p { color: #665D78; }
+.about-hero-image { background: #E9E0FF; box-shadow: 0 16px 35px rgba(36,16,68,.13); }
+
+/* Shared yellow crystal buttons */
+.about-primary-button,
+.about-hero .about-primary-button {
+    position: relative;
+    overflow: hidden;
+    color: #241044;
+    border: 1px solid #E5AE20;
+    background: linear-gradient(180deg, #FFF1A7 0%, #FFD447 52%, #EFB921 100%);
+    box-shadow: inset 0 2px 2px rgba(255,255,255,.85),
+                inset 0 -2px 3px rgba(128,80,0,.13),
+                0 5px 0 #B98616, 0 12px 22px rgba(36,16,68,.18);
+}
+.about-primary-button::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 4px;
+    right: 4px;
+    height: 43%;
+    border-radius: 6px 6px 12px 12px;
+    background: linear-gradient(to bottom, rgba(255,255,255,.5), transparent);
+    pointer-events: none;
+}
+.about-primary-button:hover,
+.about-hero .about-primary-button:hover {
+    color: #241044;
+    box-shadow: inset 0 2px 2px rgba(255,255,255,.9),
+                0 9px 0 #B98616, 0 17px 27px rgba(36,16,68,.23);
+}
+.about-primary-button:focus-visible,
+.about-nav a:focus-visible {
+    outline: 3px solid #7042D8;
+    outline-offset: 4px;
+}
+
+/* Content sections: preserve light, airy editorial layout */
+.about-introduction { background: #FFFFFF; }
+.about-approach { background: #F4F0FF; }
+.about-purpose { background: #FFFFFF; }
+.about-final {
+    background: linear-gradient(125deg, #241044 0%, #44207B 58%, #7042D8 100%);
+    color: #FFFFFF;
+}
+.about-section-label span,
+.about-small-label,
+.purpose-item > span { color: #7042D8; }
+.about-introduction-content h2,
+.about-section-heading h2,
+.approach-item h3,
+.about-purpose-intro h2,
+.purpose-item h3 { color: #241044; }
+.about-introduction-content p,
+.about-section-heading p,
+.approach-item p,
+.about-purpose-intro p,
+.purpose-item p { color: #665D78; }
+.approach-item { border-top-color: #B59AF4; }
+.approach-item:hover { border-top-color: #7042D8; }
+.approach-number { color: #7042D8; }
+.purpose-item { border-bottom-color: #E4D9F8; }
+.about-final .about-small-label { color: #FFD447; }
+.about-final h2 { color: #FFFFFF; }
+.about-final p { color: #E9E0FF; }
+.about-footer { background: #1A0B34; }
+.about-footer p { color: #D1C4EB; }
+.about-footer a { color: #FFD447; }
+
+@media (prefers-reduced-motion: reduce) {
+    .about-primary-button::before { transition: none; }
+}

@@ -16,50 +16,72 @@
 }
 
 /* ==========================================
-   HEADER
+   HEADER - SHARED WHITE DESIGN
 ========================================== */
 
 .courses-header {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background: #F4F9FF;
+    background: #ffffff;
 }
 
-.courses-header-link {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: clamp(115px, 12vw, 190px);
-    overflow: hidden;
+.courses-header .site-header-banner {
+    min-height: 130px;
+    padding: 28px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    background: #ffffff;
 }
 
-.courses-header-image {
-    position: absolute;
-    inset: 0;
+.courses-header .site-header-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    background-image: url("../images/header-world-map.png");
-    background-repeat: no-repeat;
-    background-size: auto 220%;
-    background-position: center center;
-
-    animation: coursesHeaderReveal 1.5s ease-out both;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: 1.2px;
+    text-decoration: none;
 }
 
-@keyframes coursesHeaderReveal {
-    from {
-        opacity: 0;
-        filter: brightness(.7);
+.courses-header .brand-first-line {
+    color: #102c54;
+}
+
+.courses-header .brand-second-line {
+    color: #bd8435;
+}
+
+.courses-header .site-header-motto {
+    margin: 0 65px 0 0;
+    color: #617383;
+
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .courses-header .site-header-banner {
+        min-height: 105px;
+        padding: 22px 6%;
+        gap: 15px;
     }
 
-    to {
-        opacity: 1;
-        filter: brightness(1);
+    .courses-header .site-header-brand {
+        font-size: 18px;
+    }
+
+    .courses-header .site-header-motto {
+        display: none;
     }
 }
 
@@ -1887,3 +1909,120 @@
         animation: none;
     }
 }
+
+
+/* ==============================================
+   COURSES — VIOLET / YELLOW VISUAL IDENTITY
+   Scoped overrides; existing layout preserved.
+============================================== */
+:root {
+    --courses-dark: #241044;
+    --courses-deep: #1B0C35;
+    --courses-teal: #7042D8;
+    --courses-gold: #FFD447;
+    --courses-cream: #F4F0FF;
+    --courses-text: #241044;
+}
+.courses-header,
+.courses-header .site-header-banner { background: #241044; }
+.courses-header .brand-first-line { color: #FFFFFF; }
+.courses-header .brand-second-line { color: #FFD447; }
+.courses-header .site-header-motto { color: #E1D5F6; }
+.courses-nav { background: #241044; border-top-color: rgba(255,255,255,.13); }
+.courses-nav a { color: #F4F0FF; }
+.courses-nav a.active,
+.courses-nav a:hover { color: #FFD447; }
+.courses-nav a::after { background: #FFD447; }
+.courses-nav a:hover {
+    background: linear-gradient(180deg,rgba(181,154,244,.25),rgba(112,66,216,.28));
+}
+.courses-hero {
+    background:
+        radial-gradient(circle at 88% 15%,rgba(181,154,244,.23),transparent 36%),
+        linear-gradient(115deg,#1B0C35 0%,#241044 52%,#7042D8 100%);
+    color: #FFFFFF;
+}
+.courses-eyebrow,
+.courses-hero h1 span { color: #FFD447; }
+.courses-hero h1 { color: #FFFFFF; }
+.courses-hero-content > p { color: #E7DDFB; }
+.courses-hero-actions .courses-hero-button {
+    color: #241044;
+    background: linear-gradient(180deg,#FFE989 0%,#FFD447 52%,#E8B928 100%);
+    border-color: #E8B928;
+    text-shadow: none;
+    box-shadow: inset 0 3px 3px rgba(255,255,255,.7),
+                inset 0 -4px 5px rgba(124,87,0,.18),
+                0 5px 0 #B98C18,0 12px 22px rgba(15,4,32,.24);
+}
+.courses-hero-actions .courses-hero-button:hover {
+    color: #241044;
+    background: linear-gradient(180deg,#FFF3B0 0%,#FFE16B 48%,#FFD447 100%);
+    box-shadow: inset 0 3px 4px rgba(255,255,255,.75),
+                0 9px 0 #B98C18,0 18px 28px rgba(15,4,32,.28);
+}
+.courses-hero-actions .courses-hero-button:active {
+    box-shadow: inset 0 3px 6px rgba(70,38,0,.2),0 2px 0 #B98C18;
+}
+.courses-diagnostic-button {
+    color: #FFFFFF;
+    background: linear-gradient(135deg,rgba(181,154,244,.34),rgba(112,66,216,.20));
+    border-color: rgba(233,219,255,.62);
+}
+.courses-diagnostic-button:hover {
+    background: linear-gradient(135deg,rgba(181,154,244,.45),rgba(112,66,216,.34));
+}
+.diagnostic-icon { color: #FFD447; }
+.courses-diagnostic-button:focus-visible { outline-color: #FFD447; }
+.courses-section {
+    background: linear-gradient(180deg,#241044 0%,#352057 45%,#7042D8 78%,#F4F0FF 100%);
+}
+.courses-section::after {
+    background: radial-gradient(circle at 85% 15%,rgba(181,154,244,.22),transparent 35%),
+                radial-gradient(circle at 12% 55%,rgba(112,66,216,.18),transparent 40%);
+}
+.courses-section-label { color: #FFD447; }
+.courses-section-heading h2 { color: #FFFFFF; }
+.courses-section-heading p { color: #E7DDFB; }
+.course-path-card.beginner {
+    background: linear-gradient(110deg,#F4F0FF 0%,#DCCDFB 52%,#B59AF4 100%);
+}
+.course-path-card.intermediate {
+    background: linear-gradient(110deg,#E8D9FF 0%,#BEA1FA 46%,#7042D8 100%);
+}
+.course-path-card.advanced {
+    background: linear-gradient(110deg,#FFF4C4 0%,#FFE477 52%,#FFD447 100%);
+}
+.course-path-card.beginner::before { background: #7042D8; }
+.course-path-card.intermediate::before { background: #B59AF4; }
+.course-path-card.advanced::before { background: #FFD447; }
+.course-path-content h3,
+.course-path-card.intermediate .course-path-content h3 { color: #241044; }
+.course-path-content p,
+.course-path-card.intermediate .course-path-content p { color: #49335F; }
+.course-path-level,
+.intermediate .course-path-level,
+.advanced .course-path-level,
+.course-path-card.intermediate .course-path-level {
+    color: #241044;
+    background: rgba(255,255,255,.72);
+    border-color: rgba(255,255,255,.85);
+}
+.course-path-status {
+    color: #3F2C5E;
+    background: rgba(255,255,255,.66);
+    border-color: rgba(255,255,255,.78);
+}
+.course-path-card,
+.course-path-card:hover {
+    border-color: rgba(255,255,255,.8);
+}
+.course-path-card:hover { box-shadow: inset 0 3px 3px rgba(255,255,255,.9),
+    inset 0 -4px 6px rgba(0,0,0,.08),0 10px 0 rgba(36,16,68,.12),
+    0 22px 35px rgba(36,16,68,.25); }
+.course-path-image { background: #E7DDFB; }
+/* The global stylesheet also styles the footer: scope its color transition here. */
+footer { background: #241044; }
+footer .footer-logo h3, footer .footer-logo h3 span { color: #FFFFFF; }
+footer .footer-logo h3 span { color: #FFD447; }
+footer .footer-links a:hover { color: #FFD447; }

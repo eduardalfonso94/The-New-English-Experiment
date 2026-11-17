@@ -4737,3 +4737,204 @@ header nav li a.active {
         font-size: 29px;
     }
 }
+
+/* =====================================
+   MAIN HEADER - CLEAN WHITE DESIGN
+===================================== */
+
+.site-header-banner {
+    min-height: 130px;
+    padding: 28px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    background: #ffffff;
+}
+
+.site-header-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+}
+
+.brand-first-line {
+    color: #102c54;
+}
+
+.brand-second-line {
+    color: #bd8435;
+}
+
+.site-header-motto {
+    margin: 0 65px 0 0;
+    color: #617383;
+
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .site-header-banner {
+        min-height: 105px;
+        padding: 22px 6%;
+        gap: 15px;
+    }
+
+    .site-header-brand {
+        font-size: 18px;
+    }
+
+    .site-header-motto {
+        display: none;
+    }
+}
+
+
+/* =====================================================
+   NEW BRAND IDENTITY — VIOLET / YELLOW / WHITE
+   Home page. Keep at the END of style.css.
+===================================================== */
+:root {
+    --navy: #241044;
+    --blue: #7042D8;
+    --light-blue: #B59AF4;
+    --yellow: #FFD447;
+    --background: #F4F0FF;
+    --border: #E4D9FC;
+}
+/* Header and navigation */
+.site-header-banner { background: #fff; }
+.brand-first-line { color: #241044; }
+.brand-second-line { color: #7042D8; }
+.site-header-motto { color: #625777; }
+header > nav { background: #241044; border-top-color: #7042D8; }
+header > nav a { color: #fff; }
+header > nav a:hover, header > nav a.active { color: #FFD447; }
+header > nav a.active { text-decoration-color: #FFD447; }
+
+/* Hero slideshow: keep images and timings intact */
+.hero { background: linear-gradient(110deg,#241044,#7042D8); }
+.hero::after {
+    background: linear-gradient(to bottom,
+        rgba(36,16,68,.55) 0%,
+        rgba(50,24,94,.69) 55%,
+        #241044 100%);
+}
+.hero .category { color: #FFD447; }
+.hero h1 { color: #fff; }
+.hero h1 .hero-yellow-title { color: #FFD447; }
+.hero-description { color: #F4F0FF; }
+.hero:hover { box-shadow: 0 12px 28px rgba(36,16,68,.15); }
+
+/* Buttons: preserve raised/glass feel */
+.main-button {
+    background: linear-gradient(180deg,#FFE77D,#FFD447 65%,#F4C42F);
+    color: #241044;
+    border-color: #E8B928;
+    box-shadow: 0 3px 0 #C99F20,0 6px 14px rgba(36,16,68,.2),inset 0 1px 0 rgba(255,255,255,.7);
+}
+.main-button:hover {
+    background: linear-gradient(180deg,#FFF0A3,#FFDF62);
+    box-shadow: 0 5px 0 #C99F20,0 9px 18px rgba(36,16,68,.24);
+}
+.main-button:active { box-shadow: 0 1px 0 #C99F20,0 2px 5px rgba(36,16,68,.15); }
+.diagnostic-button { border-color: rgba(255,212,71,.55); }
+
+/* Search bar */
+.search-container { border-bottom-color: #E4D9FC; }
+.search-input, #searchInput { color: #241044; }
+.search-input:focus, #searchInput:focus {
+    border-color: #7042D8;
+    box-shadow: 0 0 0 3px rgba(112,66,216,.17);
+}
+.search-field::before { filter: hue-rotate(58deg) saturate(1.5); }
+
+/* Course cards and typography */
+.category, .section-heading .category { color: #7042D8; }
+.section-heading h2, .card-content h3 { color: #241044; }
+#course-details { background-color: #F4F0FF; }
+#course-details::before { opacity: .20; }
+#course-details .content-card { background: #fff; border-color: #E4D9FC; }
+#course-details .content-card:hover { border-color: #B59AF4; box-shadow: 0 20px 38px rgba(36,16,68,.14); }
+#course-details .card-content .category { color: #7042D8; }
+#course-details .content-card:hover .card-content .category { color: #7042D8; }
+#course-details .card-content h3, #course-details .content-card:hover .card-content h3 { color: #241044; }
+#course-details .card-content a, #course-details .content-card:hover .card-content a { color: #7042D8; }
+#course-details .content-card:focus-within { outline-color: #7042D8; }
+#course-details .course-card-image::after { background: linear-gradient(to bottom,transparent 55%,rgba(36,16,68,.18)); }
+
+/* Practice: preserve image cards and bento layout */
+#practice { background-color: #F4F0FF; }
+#practice .section-heading h2 { color: #241044; }
+#practice .bento-link { color: #241044; }
+
+/* Podcast banner on the home page */
+#podcasts.podcast-banner {
+    background-color: #241044;
+    background-image: linear-gradient(90deg,#241044 0%,#241044 30%,rgba(36,16,68,.92) 48%,rgba(36,16,68,.30) 78%,transparent 100%),url("images/podcast-background.png");
+}
+#podcasts.podcast-banner .category { color: #FFD447; }
+#podcasts.podcast-banner h2 { color: #fff; }
+#podcasts.podcast-banner .podcast-description { color: #F4F0FF; }
+
+/* PODCAST - REMOVE YELLOW STRIP */
+
+#podcasts.podcast-banner .podcast-topics {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Preserve the original glossy button */
+
+#podcasts.podcast-banner .podcast-listen-button {
+    width: fit-content;
+    max-width: 100%;
+}
+
+
+/* About and final call to action */
+#about { background: #fff; }
+#about .section-heading h2 { color: #241044; }
+#about .section-heading h2 span { color: #7042D8; }
+#contact.newsletter { background: linear-gradient(135deg,#241044,#513095); }
+#contact.newsletter h2 { color: #fff; }
+#contact.newsletter h2 span { color: #FFD447; }
+#contact.newsletter p, #contact .newsletter-eyebrow { color: #F4F0FF; }
+
+/* Footer */
+footer { background: #241044; }
+.footer-logo span, .footer-links a:hover { color: #FFD447; }
+.footer-logo p, .copyright { color: #E4D9FC; }
+.copyright { border-top-color: rgba(181,154,244,.3); }
+
+@media (prefers-reduced-motion: reduce) {
+    .hero h1 .hero-yellow-title { transition: none; }
+}
+
+/* =====================================
+   FIX PODCAST BUTTON BACKGROUND
+===================================== */
+
+.podcast-banner .podcast-topics {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.podcast-banner .podcast-listen-button {
+    width: fit-content;
+    max-width: 100%;
+}
