@@ -921,10 +921,10 @@ body {
     --white: #FFFFFF;
 }
 body { background: #F4F0FF; color: #241044; }
-.about-header, .about-topbar { background: #FFFFFF; }
-.about-brand { color: #241044; }
-.about-brand span { color: #7042D8; }
-.about-header-note { color: #6B6080; }
+.about-header, .about-topbar { background: #241044; }
+.about-brand { color: #FFFFFF; }
+.about-brand span { color: #FFD447; }
+.about-header-note { color: #E1D5F6; }
 .about-nav { background: #241044; }
 .about-nav a { color: #F7F4FF; }
 .about-nav a:hover, .about-nav a.active { color: #FFD447; }

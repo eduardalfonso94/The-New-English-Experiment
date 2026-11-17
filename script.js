@@ -297,3 +297,92 @@ if (hero && homeLinks.length > 0) {
         link.addEventListener("click", replayHeroAnimation);
     });
 }
+
+/* ==========================================
+   ENCABEZADO FLOTANTE INTELIGENTE - HOME
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const banner = document.querySelector(".site-header-banner");
+    const header = document.querySelector("header");
+
+    if (!banner || !header) return;
+
+    // Separar la franja superior del encabezado.
+    // La barra de navegación queda en su lugar original.
+    if (banner.parentElement === header) {
+        header.parentElement.insertBefore(banner, header);
+    }
+
+    let ticking = false;
+
+
+function updateFloatingHeader() {
+    const scrollPosition = window.scrollY;
+    const isCompact = banner.classList.contains("is-compact");
+
+    // Dos límites distintos evitan el parpadeo.
+    if (!isCompact && scrollPosition > 120) {
+        banner.classList.add("is-compact");
+    } else if (isCompact && scrollPosition < 30) {
+        banner.classList.remove("is-compact");
+    }
+
+    ticking = false;
+}
+
+    window.addEventListener("scroll", function () {
+        if (!ticking) {
+            window.requestAnimationFrame(updateFloatingHeader);
+            ticking = true;
+        }
+    }, { passive: true });
+
+    updateFloatingHeader();
+
+});
+
+/* ==========================================
+   HOME - VOLVER AL INICIO COMPLETO
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Enlaces que llevan a la página principal
+    const homeNavigationLinks = document.querySelectorAll(
+        'a[href="#home"], a[href="index.html"], a[href="./index.html"]'
+    );
+
+    homeNavigationLinks.forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            // Solo intervenir si estamos en Home
+            const currentPage = window.location.pathname;
+
+            if (!currentPage.endsWith("/") &&
+                !currentPage.endsWith("/index.html")) {
+                return;
+            }
+
+            event.preventDefault();
+
+            // Eliminar el fragmento #home de la dirección
+            history.replaceState(
+                null,
+                "",
+                window.location.pathname + window.location.search
+            );
+
+            // Regresar al inicio absoluto
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    });
+
+});

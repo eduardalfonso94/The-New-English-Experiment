@@ -11,14 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // Detect whether we are on the home page
-    // or inside a subfolder.
-
+    // Detect home page or subfolder
     const path = window.location.pathname;
     const isHomePage = /\/(?:index\.html)?$/.test(path);
     const base = isHomePage ? "" : "../";
 
-    // Create menu button
+    // Create floating button
     const toggle = document.createElement("button");
 
     toggle.id = "floatingMenuToggle";
@@ -35,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <span></span>
     `;
 
-    // Create menu panel
+    // Create navigation panel
     const panel = document.createElement("nav");
 
     panel.id = "floatingMenuPanel";
@@ -65,16 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 Practice
             </a>
 
-            <a href="${base}explore/explore.html">
-                <span class="floating-link-icon">◈</span>
-                Explore
-            </a>
-
-            <a href="${base}videos/videos.html">
-                <span class="floating-link-icon">▶</span>
-                Videos
-            </a>
-
             <a href="${base}podcasts/podcasts.html">
                 <span class="floating-link-icon">◉</span>
                 Podcasts
@@ -97,8 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(toggle);
     document.body.appendChild(panel);
 
-    // Open or close menu
+    // Open and close menu
     function setMenuOpen(open) {
+
         toggle.classList.toggle("is-open", open);
         panel.classList.toggle("is-open", open);
 
@@ -119,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Toggle menu
     toggle.addEventListener("click", () => {
         const open = !toggle.classList.contains("is-open");
         setMenuOpen(open);
@@ -134,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Close with Escape
+    // Close using Escape
     document.addEventListener("keydown", event => {
         if (event.key === "Escape") {
             setMenuOpen(false);

@@ -423,3 +423,46 @@
     }
 
 }
+
+
+/* ==========================================
+   VIOLET + YELLOW BRAND REFINEMENT
+   Overrides previous blue glass treatments.
+========================================== */
+.floating-menu-toggle {
+    background: linear-gradient(145deg, rgba(185,154,244,.82) 0%, rgba(112,66,216,.88) 48%, rgba(36,16,68,.96) 100%);
+    border-color: rgba(230,216,255,.85);
+    box-shadow: inset 0 2px 3px rgba(255,255,255,.65), inset 0 -3px 6px rgba(36,16,68,.25), 0 7px 20px rgba(36,16,68,.28), 0 0 12px rgba(181,154,244,.20);
+}
+.floating-menu-toggle:hover {
+    background: linear-gradient(145deg, rgba(206,181,255,.92), rgba(130,81,230,.94), rgba(49,23,93,.98));
+    box-shadow: inset 0 2px 4px rgba(255,255,255,.8), 0 10px 25px rgba(36,16,68,.35), 0 0 20px rgba(181,154,244,.4);
+}
+.floating-menu-toggle span {
+    background: #FFD447;
+    box-shadow: 0 1px 3px rgba(36,16,68,.4), 0 0 5px rgba(255,212,71,.25);
+}
+.floating-menu-panel {
+    background: linear-gradient(145deg, rgba(112,66,216,.94), rgba(66,30,126,.96) 52%, rgba(36,16,68,.98));
+    border-color: rgba(206,181,255,.5);
+    box-shadow: inset 0 2px 3px rgba(255,255,255,.2), 0 18px 42px rgba(36,16,68,.35), 0 0 18px rgba(181,154,244,.12);
+}
+.floating-menu-title { color: #FFD447; }
+.floating-menu-links a { color: #FFFFFF; }
+.floating-menu-links a:hover { background: rgba(181,154,244,.22); color: #FFD447; }
+.floating-menu-links a:focus-visible, .floating-menu-toggle:focus-visible { outline-color: #FFD447; }
+.floating-menu-links .floating-diagnostic-link {
+    border-color: rgba(255,212,71,.58);
+    background: linear-gradient(135deg, rgba(255,212,71,.22), rgba(255,212,71,.10));
+    color: #FFE58B;
+}
+.floating-menu-links .floating-diagnostic-link:hover { background: rgba(255,212,71,.28); color: #FFFFFF; }
+
+/* ==========================================
+   BOTÓN FLOTANTE - RAYAS BLANCAS
+========================================== */
+
+.floating-menu-toggle span {
+    background: #FFFFFF !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.20);
+}
