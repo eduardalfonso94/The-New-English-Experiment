@@ -995,3 +995,108 @@ body { background: var(--lavender-mist); }
     .intro-content h1 { letter-spacing: -1.4px; }
     .test-features { gap: 10px; }
 }
+
+
+/* ==================================================
+   WIDELOO — UNIFIED VIOLET + GOLD DIAGNOSTIC
+   The adaptive test's existing layout and logic remain intact.
+================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap');
+:root {
+    --navy: #241044;
+    --navy-dark: #1A0B34;
+    --blue: #7042D8;
+    --gold: #FFD447;
+    --cream: #F4F0FF;
+    --ink: #241044;
+    --muted: #665D78;
+}
+body { background: var(--cream); }
+body > .site-header-banner {
+    position: sticky; top: 0; z-index: 900;
+    height: 136px; min-height: 136px;
+    padding: 14px 8%; display: flex; flex-direction: column;
+    align-items: flex-start; justify-content: center; gap: 2px;
+    background: #241044;
+    transition: height .35s ease, min-height .35s ease, padding .35s ease;
+}
+.site-header-banner .site-header-brand {
+    display: block; width: fit-content; max-width: 100%;
+    line-height: 0; transition: transform .35s ease;
+}
+.site-header-banner .wideloo-logo {
+    display: block; width: clamp(170px, 20vw, 258px);
+    max-width: 100%; height: auto; transition: width .35s ease;
+}
+.site-header-banner .site-header-motto {
+    display: block; margin: 0 0 0 14px; color: #FFD447;
+    font-family: 'Nunito', 'Trebuchet MS', Arial, sans-serif;
+    font-size: 15px; font-weight: 700; letter-spacing: .2px;
+    line-height: 1.2; text-align: left; opacity: 1; max-height: 24px;
+    transition: opacity .22s ease, max-height .3s ease;
+}
+.site-header-banner:not(.is-compact) .site-header-motto {
+    animation: widelooSloganReveal 1.1s ease-out .35s both;
+    transform-origin: top left;
+}
+@keyframes widelooSloganReveal {
+    0% { opacity: 0; transform: translateY(-12px) scaleY(.75); clip-path: inset(0 0 100% 0); }
+    100% { opacity: 1; transform: translateY(0) scaleY(1); clip-path: inset(0 0 0 0); }
+}
+body > .site-header-banner.is-compact {
+    height: 70px !important; min-height: 70px !important;
+    padding: 0 80px !important; align-items: center !important;
+    justify-content: center; gap: 0;
+}
+.site-header-banner.is-compact .site-header-brand { margin: 0 !important; transform: none; }
+.site-header-banner.is-compact .wideloo-logo { width: 160px; }
+.site-header-banner.is-compact .site-header-motto {
+    animation: none; opacity: 0; visibility: hidden;
+    max-height: 0; overflow: hidden; margin: 0;
+}
+/* Horizontal navigation removed in favor of the shared floating menu. */
+.diagnostic-nav { display: none !important; }
+/* Apply Wideloo colors while preserving the diagnostic's lavender design. */
+.diagnostic-intro { border-top: 0; }
+.diagnostic-eyebrow, .section-heading .section-eyebrow,
+.instruction-number, .test-category, .question-level, .results-eyebrow { color: #7042D8; }
+.intro-content h1 { color: #241044; }
+.intro-content h1 span { color: #7042D8; }
+.start-test-button, .next-question-button, .recommended-course-button {
+    position: relative; overflow: hidden; color: #241044;
+    border: 1px solid #E5AE20;
+    background: linear-gradient(180deg, #FFF1A7 0%, #FFD447 52%, #EFB921 100%);
+    box-shadow: inset 0 2px 2px rgba(255,255,255,.85),
+                inset 0 -2px 3px rgba(128,80,0,.13),
+                0 5px 0 #B98616, 0 12px 22px rgba(36,16,68,.18);
+}
+.start-test-button::before, .next-question-button::before,
+.recommended-course-button::before {
+    content: ''; position: absolute; top: 1px; left: 4px; right: 4px;
+    height: 43%; border-radius: 6px 6px 12px 12px;
+    background: linear-gradient(to bottom, rgba(255,255,255,.5), transparent);
+    pointer-events: none;
+}
+.start-test-button:hover, .next-question-button:not(:disabled):hover,
+.recommended-course-button:hover {
+    box-shadow: inset 0 2px 2px rgba(255,255,255,.9),
+                0 9px 0 #B98616, 0 17px 27px rgba(36,16,68,.23);
+}
+.progress-fill { background: linear-gradient(90deg, #7042D8, #FFD447); }
+.result-level { background: linear-gradient(145deg, #7042D8, #241044); }
+.diagnostic-footer { background: #1A0B34; }
+.diagnostic-footer p, .diagnostic-footer > span { color: #D1C4EB; }
+@media (max-width: 768px) {
+    body > .site-header-banner { height: 108px; min-height: 108px; padding: 12px 6%; }
+    .site-header-banner .wideloo-logo { width: 180px; }
+    .site-header-banner .site-header-motto { font-size: 12px; }
+    body > .site-header-banner.is-compact {
+        height: 64px !important; min-height: 64px !important;
+        padding: 0 65px !important;
+    }
+    .site-header-banner.is-compact .wideloo-logo { width: 132px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .site-header-motto { animation: none !important; }
+    body > .site-header-banner, .site-header-banner .wideloo-logo { transition: none; }
+}

@@ -907,3 +907,196 @@ button {
         animation: none;
     }
 }
+
+
+/* ==========================================
+   PODCASTS - COMPACT FLOATING BRAND HEADER
+   The navigation stays in normal document flow.
+========================================== */
+.podcast-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+    background: #241044;
+    transition: box-shadow .25s ease;
+}
+.podcast-topbar {
+    min-height: 130px;
+    padding: 22px 8%;
+    background: #241044;
+    transition: min-height .28s ease, padding .28s ease;
+}
+.podcast-brand {
+    color: #fff;
+    font-size: 25px;
+    line-height: 1.15;
+    transition: font-size .28s ease;
+}
+.podcast-brand span {color: #FFD447;}
+.podcast-identity {color: #E7DDFB;}
+.identity-dot {background: #FFD447;}
+.podcast-header.is-compact {box-shadow: 0 9px 22px rgba(20,7,40,.24);}
+.podcast-header.is-compact .podcast-topbar {
+    min-height: 68px;
+    height: 68px;
+    padding: 0 80px;
+    justify-content: center;
+    gap: 0;
+}
+.podcast-header.is-compact .podcast-brand {
+    align-items: center;
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.1;
+}
+.podcast-header.is-compact .podcast-identity {display:none;}
+body:has(.podcast-header.is-compact) .floating-menu-toggle {top: 8px !important;}
+@media (max-width: 768px) {
+    .podcast-topbar {min-height: 105px; padding: 20px 6%;}
+    .podcast-brand {font-size: 18px;}
+    .podcast-identity {font-size: 9px;}
+    .podcast-header.is-compact .podcast-topbar {
+        min-height: 64px;
+        height: 64px;
+        padding: 0 65px;
+    }
+    .podcast-header.is-compact .podcast-brand {font-size: 15px;}
+    body:has(.podcast-header.is-compact) .floating-menu-toggle {top: 9px !important;}
+}
+@media (max-width: 480px) {
+    .podcast-identity {display:none;}
+}
+@media (prefers-reduced-motion: reduce) {
+    .podcast-topbar, .podcast-brand, .podcast-header {transition:none;}
+}
+
+
+/* ==========================================
+   WIDELOO PODCASTS — VIOLET IDENTITY
+   Header aligned with Home / Courses / Practice
+========================================== */
+:root {
+    --forest: #241044;
+    --forest-dark: #190A32;
+    --forest-light: #452181;
+    --copper: #FFD447;
+    --cream: #FFFFFF;
+    --mint: #E7DDFB;
+    --ink: #241044;
+}
+body { background: #241044; color: #fff; }
+.podcast-header {
+    position: sticky; top: 0; z-index: 900;
+    background: #241044;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.podcast-header .site-header-banner {
+    box-sizing: border-box;
+    height: 130px; min-height: 130px;
+    padding: 14px 8%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-start;
+    gap: 0; background: #241044;
+    transition: height .28s ease, min-height .28s ease, padding .28s ease;
+}
+.podcast-header .site-header-brand {
+    display: flex; flex-direction: column; align-items: flex-start;
+    margin: 0 !important; text-decoration: none; line-height: 1;
+}
+.podcast-header .wideloo-logo {
+    display: block; width: 215px; max-width: 100%; height: auto;
+    transition: width .28s ease;
+}
+.podcast-header .site-header-motto {
+    display: block; margin: -1px 0 0 14px !important;
+    padding: 0; text-align: left;
+    font-family: 'Nunito', 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 800;
+    letter-spacing: .15px; line-height: 1.3;
+    color: #FFD447;
+    max-height: 24px; overflow: hidden;
+    animation: widelooPodcastSloganReveal 1.1s ease-out .35s both;
+    transition: opacity .22s ease, max-height .3s ease;
+}
+@keyframes widelooPodcastSloganReveal {
+    from { opacity: 0; transform: translateY(-12px) scaleY(.75); clip-path: inset(0 0 100% 0); }
+    to { opacity: 1; transform: translateY(0) scaleY(1); clip-path: inset(0 0 0 0); }
+}
+.podcast-header.is-compact .site-header-banner {
+    height: 68px !important; min-height: 68px !important;
+    padding: 0 80px !important;
+    align-items: center; justify-content: center; gap: 0;
+}
+.podcast-header.is-compact .site-header-brand { margin: 0 !important; align-items: center; }
+.podcast-header.is-compact .wideloo-logo { width: 160px; }
+.podcast-header.is-compact .site-header-motto {
+    opacity: 0; visibility: hidden; max-height: 0;
+    margin: 0 !important; animation: none;
+}
+/* No old horizontal navigation; floating-menu.js provides navigation. */
+.podcast-nav { display: none !important; }
+
+/* Violet and gold across the podcast experience */
+.podcast-hero {
+    background: radial-gradient(circle at 77% 38%, rgba(171,112,255,.25), transparent 43%),
+                linear-gradient(125deg, #241044 0%, #3A1B70 58%, #542B9A 100%);
+}
+.hero-copy h1 em, .learning-intro h2 em { color: #FFD447; }
+.hero-copy > p, .hero-bottom-note, .section-heading p,
+.featured-info > p, .learning-intro p, .learning-feature p { color: #E7DDFB; }
+.podcast-primary-button {
+    color: #241044;
+    background: linear-gradient(180deg,#FFE77D,#FFD447 60%,#EFC02C);
+    box-shadow: inset 0 2px 3px rgba(255,255,255,.7), 0 5px 0 #C99F20, 0 12px 22px rgba(0,0,0,.25);
+}
+.podcast-primary-button:hover {
+    box-shadow: inset 0 2px 3px rgba(255,255,255,.8), 0 9px 0 #C99F20, 0 18px 25px rgba(0,0,0,.3);
+}
+.podcast-secondary-button { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.45); }
+.artwork-glow { background: rgba(172,111,255,.25); }
+.artwork-card {
+    background: radial-gradient(circle at 75% 20%,rgba(255,212,71,.13),transparent 45%),
+                linear-gradient(145deg,#7042D8,#241044 78%);
+}
+.artwork-top,.artwork-bottom,.featured-cover-top,.featured-cover-bottom { color: #E7DDFB; }
+.artwork-symbol { background: rgba(255,212,71,.1); border-color: rgba(255,212,71,.35); }
+.floating-label { background: rgba(36,16,68,.88); border-color: rgba(255,212,71,.32); }
+.featured-section { background: #2C1552; }
+.featured-cover {
+    background: radial-gradient(circle at 70% 30%,rgba(255,212,71,.2),transparent 50%),
+                linear-gradient(135deg,#7042D8,#32185E);
+}
+.featured-cover-icon { background: rgba(255,212,71,.12); }
+.audio-player-preview { background: #1D0D38; }
+.audio-preview-play { background: linear-gradient(145deg,#FFE77D,#FFD447); color: #241044; }
+.episode-tags span { color: #F4F0FF; }
+.episodes-section { background: #F4F0FF; color: #241044; }
+.episodes-section .section-heading p, .episode-card-body p { color: #625777; }
+.episodes-section .section-eyebrow,.episode-card-body .card-category,.episode-coming { color: #7042D8; }
+.episode-filter { border-color: #D9CDEE; color: #452181; }
+.episode-filter.active { background: #7042D8; border-color: #7042D8; color: white; }
+.episode-filter:focus-visible { outline: 3px solid #7042D8; outline-offset: 3px; }
+.episode-card { box-shadow: 0 10px 25px rgba(36,16,68,.12); }
+.episode-card:hover { box-shadow: 0 20px 38px rgba(36,16,68,.19); }
+.art-beginner { background: linear-gradient(135deg,#926FE5,#542B9A); }
+.art-intermediate { background: linear-gradient(135deg,#7042D8,#32185E); }
+.art-advanced { background: linear-gradient(135deg,#B27BDE,#5B3196); }
+.learning-section { background: radial-gradient(circle at 15% 70%,rgba(112,66,216,.25),transparent 45%),#241044; }
+.learning-feature { background: rgba(255,255,255,.065); }
+.podcast-footer { background: #190A32; }
+.podcast-footer p { color: #E7DDFB; }
+@media (max-width: 768px) {
+    .podcast-header .site-header-banner { height: 108px; min-height: 108px; padding: 12px 6%; }
+    .podcast-header .wideloo-logo { width: 180px; }
+    .podcast-header .site-header-motto { font-size: 12px; }
+    .podcast-header.is-compact .site-header-banner {
+        height: 64px !important; min-height: 64px !important; padding: 0 65px !important;
+    }
+    .podcast-header.is-compact .wideloo-logo { width: 132px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .podcast-header .site-header-banner,.podcast-header .wideloo-logo,.podcast-header .site-header-motto {
+        animation: none; transition: none;
+    }
+}

@@ -2026,3 +2026,171 @@ footer { background: #241044; }
 footer .footer-logo h3, footer .footer-logo h3 span { color: #FFFFFF; }
 footer .footer-logo h3 span { color: #FFD447; }
 footer .footer-links a:hover { color: #FFD447; }
+
+/* ==========================================
+   COURSES — STABLE FLOATING BRAND HEADER
+   Navigation remains in normal document flow.
+========================================== */
+.courses-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+    box-shadow: 0 0 0 rgba(20,7,40,0);
+    transition: box-shadow .3s ease;
+}
+/* The compact state has an explicit height, preventing the empty
+   space beneath the title seen in earlier versions. */
+.courses-header.is-compact .site-header-banner {
+    height: 68px;
+    min-height: 68px;
+    padding: 0 80px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+.courses-header.is-compact {
+    box-shadow: 0 9px 22px rgba(20,7,40,.24);
+}
+.courses-header.is-compact .site-header-brand {
+    font-size: 19px;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    transition: none;
+}
+.courses-header.is-compact .site-header-motto {
+    display: none;
+}
+/* Floating menu belongs visually inside the compact banner. */
+body:has(.courses-header.is-compact) .floating-menu-toggle {
+    top: 8px !important;
+}
+@media (max-width: 768px) {
+    .courses-header.is-compact .site-header-banner {
+        height: 64px;
+        min-height: 64px;
+        padding: 0 65px;
+    }
+    .courses-header.is-compact .site-header-brand {
+        font-size: 15px;
+    }
+    body:has(.courses-header.is-compact) .floating-menu-toggle {
+        top: 9px !important;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .courses-header { transition: none; }
+}
+
+
+/* ==========================================
+   WIDELOO COURSES — BRAND HEADER (HOME MATCH)
+   Scoped overrides; course cards remain intact.
+========================================== */
+.courses-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: #241044;
+}
+.courses-header .site-header-banner {
+    height: 136px;
+    min-height: 136px;
+    padding: 14px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    background: #241044;
+    box-sizing: border-box;
+    transition: height .35s ease, min-height .35s ease, padding .35s ease;
+}
+.courses-header .site-header-brand {
+    display: block;
+    flex: none;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    text-align: left;
+    transform: none;
+}
+.courses-header .wideloo-logo {
+    display: block;
+    width: clamp(170px, 20vw, 258px);
+    max-width: 100%;
+    height: auto;
+    transition: width .35s ease;
+}
+.courses-header .site-header-motto {
+    display: block;
+    margin: 0 0 0 14px;
+    padding: 0;
+    color: #FFD447;
+    font-family: 'Nunito', 'Trebuchet MS', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    line-height: 1.2;
+    text-align: left;
+    opacity: 1;
+    visibility: visible;
+    max-height: 24px;
+    overflow: hidden;
+    animation: widelooCoursesSloganReveal 1.1s ease-out .35s both;
+    transition: opacity .22s ease, max-height .3s ease;
+}
+@keyframes widelooCoursesSloganReveal {
+    from { opacity: 0; transform: translateY(-12px) scaleY(.75); clip-path: inset(0 0 100% 0); }
+    to { opacity: 1; transform: translateY(0) scaleY(1); clip-path: inset(0 0 0 0); }
+}
+.courses-header.is-compact .site-header-banner {
+    height: 68px !important;
+    min-height: 68px !important;
+    padding: 0 80px !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+.courses-header.is-compact .site-header-brand {
+    margin: 0 !important;
+    align-items: center;
+    text-align: center;
+}
+.courses-header.is-compact .wideloo-logo { width: 160px; }
+.courses-header.is-compact .site-header-motto {
+    display: block !important;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    margin: 0;
+    animation: none;
+}
+@media (max-width: 768px) {
+    .courses-header .site-header-banner {
+        height: 108px;
+        min-height: 108px;
+        padding: 12px 6%;
+    }
+    .courses-header .wideloo-logo { width: 180px; }
+    .courses-header .site-header-motto { display: block; font-size: 12px; }
+    .courses-header.is-compact .site-header-banner {
+        height: 64px !important;
+        min-height: 64px !important;
+        padding: 0 65px !important;
+    }
+    .courses-header.is-compact .wideloo-logo { width: 132px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .courses-header .site-header-banner,
+    .courses-header .wideloo-logo,
+    .courses-header .site-header-motto { animation: none; transition: none; }
+}

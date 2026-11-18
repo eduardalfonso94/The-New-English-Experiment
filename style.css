@@ -5086,3 +5086,162 @@ body:has(.site-header-banner.is-compact)
         top: 9px !important;
     }
 }
+
+
+/* ==========================================
+   WIDELOO — OFFICIAL BRAND HEADER
+   Header only; existing sections are unchanged.
+========================================== */
+.site-header-banner {
+    height: 136px;
+    min-height: 136px;
+    padding: 14px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    background: #241044;
+    transition: height .35s ease, min-height .35s ease, padding .35s ease;
+}
+.site-header-banner .site-header-brand {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    line-height: 0;
+    transition: transform .35s ease;
+}
+.site-header-banner .wideloo-logo {
+    display: block;
+    width: clamp(170px, 20vw, 258px);
+    max-width: 100%;
+    height: auto;
+    transition: width .35s ease;
+}
+.site-header-banner .site-header-motto {
+    display: block;
+    margin: 0;
+    color: #FFD447;
+    font-family: 'Nunito', 'Trebuchet MS', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    line-height: 1.2;
+    text-align: left;
+    opacity: 1;
+    max-height: 24px;
+    transition: opacity .22s ease, max-height .3s ease;
+}
+.site-header-banner.is-compact {
+    height: 70px !important;
+    min-height: 70px !important;
+    padding: 0 80px !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+.site-header-banner.is-compact .site-header-brand {
+    margin: 0 !important;
+    transform: none;
+}
+.site-header-banner.is-compact .wideloo-logo {
+    width: 160px;
+}
+.site-header-banner.is-compact .site-header-motto {
+    display: block !important;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .site-header-banner {
+        height: 108px;
+        min-height: 108px;
+        padding: 12px 6%;
+    }
+    .site-header-banner .wideloo-logo {
+        width: 180px;
+    }
+    .site-header-banner .site-header-motto {
+        font-size: 12px;
+    }
+    .site-header-banner.is-compact {
+        height: 64px !important;
+        min-height: 64px !important;
+        padding: 0 65px !important;
+    }
+    .site-header-banner.is-compact .wideloo-logo {
+        width: 132px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .site-header-banner, .site-header-banner .wideloo-logo,
+    .site-header-banner .site-header-motto { transition: none; }
+}
+/* =====================================
+   WIDELOO - FINAL LOGO ALIGNMENT
+===================================== */
+
+/* Initial header */
+.site-header-banner:not(.is-compact) {
+    align-items: flex-start;
+}
+
+/* Logo */
+.site-header-banner:not(.is-compact) .site-header-brand {
+    margin-left: 0 !important;
+}
+
+/* Slogan aligned with visible logo */
+.site-header-banner:not(.is-compact) .site-header-motto {
+    margin-left: 14px !important;
+    text-align: left;
+}
+
+/* Compact header: logo centered */
+.site-header-banner.is-compact {
+    align-items: center !important;
+}
+
+.site-header-banner.is-compact .site-header-brand {
+    margin-left: 0 !important;
+}
+/* =====================================
+   WIDELOO - SLOGAN REVEAL ANIMATION
+===================================== */
+
+/* Initial slogan animation */
+.site-header-banner:not(.is-compact) .site-header-motto {
+    animation: widelooSloganReveal 1.1s ease-out 0.35s both;
+    transform-origin: top left;
+}
+
+/* Reveal from top to bottom */
+@keyframes widelooSloganReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-12px) scaleY(0.75);
+        clip-path: inset(0 0 100% 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* No animation in compact header */
+.site-header-banner.is-compact .site-header-motto {
+    animation: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .site-header-motto {
+        animation: none !important;
+    }
+}

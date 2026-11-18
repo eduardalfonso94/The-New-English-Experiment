@@ -1015,3 +1015,163 @@ body { background: #F4F0FF; color: #241044; }
 @media (prefers-reduced-motion: reduce) {
     .about-primary-button::before { transition: none; }
 }
+
+
+/* ABOUT US — COMPACT STICKY HEADER */
+body > .about-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: #241044;
+}
+body > .about-header .about-topbar {
+    min-height: 108px;
+    transition: min-height .28s ease, padding .28s ease;
+}
+body > .about-header .about-brand {
+    transition: font-size .28s ease, letter-spacing .28s ease;
+}
+body > .about-header.is-compact .about-topbar {
+    box-sizing: border-box;
+    min-height: 68px;
+    height: 68px;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+body > .about-header.is-compact .about-brand {
+    text-align: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.08;
+    letter-spacing: .5px;
+}
+body > .about-header.is-compact .about-header-note {
+    display: none;
+}
+@media (max-width: 650px) {
+    body > .about-header .about-topbar { min-height: 95px; }
+    body > .about-header.is-compact .about-topbar {
+        min-height: 64px;
+        height: 64px;
+        padding: 0 65px;
+    }
+    body > .about-header.is-compact .about-brand {
+        font-size: 13px;
+        letter-spacing: .15px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    body > .about-header .about-topbar,
+    body > .about-header .about-brand { transition: none; }
+}
+
+/* =====================================================
+   WIDELOO — SHARED BRAND HEADER (HOME / COURSES / PRACTICE)
+   Overrides legacy About header only; editorial content stays intact.
+===================================================== */
+.about-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+    background: #241044;
+    box-shadow: none;
+    transition: box-shadow .35s ease;
+}
+.about-header .about-topbar,
+body > .about-header .about-topbar {
+    box-sizing: border-box;
+    height: 136px;
+    min-height: 136px;
+    padding: 14px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    background: #241044;
+    transition: height .35s ease, min-height .35s ease, padding .35s ease;
+}
+.about-header .about-brand {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+    line-height: 0;
+    text-decoration: none;
+}
+.about-header .wideloo-logo {
+    display: block;
+    width: clamp(170px, 20vw, 258px);
+    max-width: 100%;
+    height: auto;
+    transition: width .35s ease;
+}
+.about-header .about-header-motto {
+    display: block;
+    margin: 0 0 0 12px;
+    color: #FFD447;
+    font-family: 'Nunito', 'Trebuchet MS', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    line-height: 1.2;
+    text-align: left;
+    max-height: 24px;
+    transform-origin: top left;
+    animation: widelooAboutSloganReveal 1.1s ease-out .35s both;
+    transition: opacity .22s ease, max-height .3s ease;
+}
+@keyframes widelooAboutSloganReveal {
+    0% { opacity: 0; transform: translateY(-12px) scaleY(.75); clip-path: inset(0 0 100% 0); }
+    100% { opacity: 1; transform: translateY(0) scaleY(1); clip-path: inset(0 0 0 0); }
+}
+.about-header.is-compact { box-shadow: 0 9px 22px rgba(20,7,40,.24); }
+.about-header.is-compact .about-topbar,
+body > .about-header.is-compact .about-topbar {
+    height: 70px !important;
+    min-height: 70px !important;
+    padding: 0 80px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0;
+}
+.about-header.is-compact .about-brand,
+body > .about-header.is-compact .about-brand { margin: 0 !important; text-align: center; }
+.about-header.is-compact .wideloo-logo { width: 160px; }
+.about-header.is-compact .about-header-motto {
+    animation: none;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+}
+body:has(.about-header.is-compact) .floating-menu-toggle { top: 8px !important; }
+@media (max-width: 768px) {
+    .about-header .about-topbar,
+    body > .about-header .about-topbar {
+        height: 108px;
+        min-height: 108px;
+        padding: 12px 6%;
+    }
+    .about-header .wideloo-logo { width: 180px; }
+    .about-header .about-header-motto { font-size: 12px; }
+    .about-header.is-compact .about-topbar,
+    body > .about-header.is-compact .about-topbar {
+        height: 64px !important;
+        min-height: 64px !important;
+        padding: 0 65px !important;
+    }
+    .about-header.is-compact .wideloo-logo { width: 132px; }
+    body:has(.about-header.is-compact) .floating-menu-toggle { top: 9px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .about-header .about-header-motto { animation: none; opacity: 1; }
+    .about-header.is-compact .about-header-motto { opacity: 0; }
+    .about-header .about-topbar, .about-header .wideloo-logo { transition: none; }
+}

@@ -1146,3 +1146,174 @@ body > footer a { color: #F4F0FF; }
 body > footer a:hover { color: #FFD447; }
 body > footer .footer-logo p,
 body > footer .copyright { color: #D9CDEE; }
+
+
+/* ============================================
+   PRACTICE - COMPACT STICKY HEADER
+   Keeps the normal navigation in document flow.
+============================================ */
+body > header.interior-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    min-height: 0;
+    overflow: visible;
+    transition: background-color .25s ease;
+}
+body > header.interior-header .site-header-banner {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 130px;
+    transition: min-height .28s ease, padding .28s ease;
+}
+body > header.interior-header .site-header-brand {
+    transition: font-size .28s ease, letter-spacing .28s ease;
+}
+body > header.interior-header.is-compact .site-header-banner {
+    min-height: 68px !important;
+    height: 68px !important;
+    padding: 0 80px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+body > header.interior-header.is-compact .site-header-brand {
+    align-items: center;
+    text-align: center;
+    font-size: 16px !important;
+    line-height: 1.08;
+    letter-spacing: .5px;
+}
+body > header.interior-header.is-compact .site-header-motto {
+    display: none !important;
+}
+@media (max-width: 768px) {
+    body > header.interior-header.is-compact .site-header-banner {
+        min-height: 64px !important;
+        height: 64px !important;
+        padding: 0 65px !important;
+    }
+    body > header.interior-header.is-compact .site-header-brand {
+        font-size: 13px !important;
+        letter-spacing: .15px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    body > header.interior-header .site-header-banner,
+    body > header.interior-header .site-header-brand {
+        transition: none;
+    }
+}
+
+
+/* ==========================================
+   WIDELOO PRACTICE — BRAND HEADER (COURSES MATCH)
+   Preserve activity cards, hero and interactions.
+========================================== */
+body > header.interior-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+    min-height: 0;
+    background: #241044;
+    overflow: visible;
+}
+body > header.interior-header .site-header-banner {
+    box-sizing: border-box;
+    width: 100%;
+    height: 136px;
+    min-height: 136px;
+    padding: 14px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    background: #241044;
+    transition: height .35s ease, min-height .35s ease, padding .35s ease;
+}
+body > header.interior-header .site-header-brand {
+    display: block;
+    flex: none;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    text-align: left;
+    transform: none;
+}
+body > header.interior-header .wideloo-logo {
+    display: block;
+    width: clamp(170px, 20vw, 258px);
+    max-width: 100%;
+    height: auto;
+    transition: width .35s ease;
+}
+body > header.interior-header .site-header-motto {
+    display: block;
+    margin: 0 0 0 14px;
+    padding: 0;
+    color: #FFD447;
+    font-family: 'Nunito', 'Trebuchet MS', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    line-height: 1.2;
+    text-align: left;
+    opacity: 1;
+    visibility: visible;
+    max-height: 24px;
+    overflow: hidden;
+    animation: widelooPracticeSloganReveal 1.1s ease-out .35s both;
+    transition: opacity .22s ease, max-height .3s ease;
+}
+@keyframes widelooPracticeSloganReveal {
+    from { opacity: 0; transform: translateY(-12px) scaleY(.75); clip-path: inset(0 0 100% 0); }
+    to { opacity: 1; transform: translateY(0) scaleY(1); clip-path: inset(0 0 0 0); }
+}
+body > header.interior-header.is-compact .site-header-banner {
+    height: 68px !important;
+    min-height: 68px !important;
+    padding: 0 80px !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+body > header.interior-header.is-compact .site-header-brand {
+    margin: 0 !important;
+    align-items: center;
+    text-align: center;
+}
+body > header.interior-header.is-compact .wideloo-logo { width: 160px; }
+body > header.interior-header.is-compact .site-header-motto {
+    display: block !important;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    margin: 0;
+    animation: none;
+}
+@media (max-width: 768px) {
+    body > header.interior-header .site-header-banner {
+        height: 108px;
+        min-height: 108px;
+        padding: 12px 6%;
+    }
+    body > header.interior-header .wideloo-logo { width: 180px; }
+    body > header.interior-header .site-header-motto { display: block; font-size: 12px; }
+    body > header.interior-header.is-compact .site-header-banner {
+        height: 64px !important;
+        min-height: 64px !important;
+        padding: 0 65px !important;
+    }
+    body > header.interior-header.is-compact .wideloo-logo { width: 132px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    body > header.interior-header .site-header-banner,
+    body > header.interior-header .wideloo-logo,
+    body > header.interior-header .site-header-motto { animation: none; transition: none; }
+}

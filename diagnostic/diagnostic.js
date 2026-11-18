@@ -641,3 +641,21 @@ document.addEventListener("DOMContentLoaded", () => {
     restartButton.addEventListener("click", startTest);
 
 });
+
+
+/* WIDELOO — COMPACT HEADER ON SCROLL */
+document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('.site-header-banner');
+    if (!header) return;
+    let ticking = false;
+    function updateHeader() {
+        const compact = header.classList.contains('is-compact');
+        if (!compact && window.scrollY > 120) header.classList.add('is-compact');
+        else if (compact && window.scrollY < 30) header.classList.remove('is-compact');
+        ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(updateHeader); }
+    }, { passive: true });
+    updateHeader();
+});

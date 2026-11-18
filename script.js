@@ -76,10 +76,10 @@ searchContainer.appendChild(searchField);
 
 // Insert search bar after navigation
 
-const navigation = document.querySelector("nav");
+const brandBanner = document.querySelector(".site-header-banner");
 
-if (navigation) {
-    navigation.after(searchContainer);
+if (brandBanner) {
+    brandBanner.after(searchContainer);
 }
 
 // Create message for searches without results
@@ -252,7 +252,7 @@ if (copyright) {
 
     copyright.textContent =
         "© " + new Date().getFullYear() +
-        " The New Language Experiment. All rights reserved.";
+        " Wideloo. All rights reserved.";
 
 }
 
@@ -262,7 +262,7 @@ if (copyright) {
 ====================================== */
 
 console.log(
-    "Welcome to The New Language Experiment!"
+    "Welcome to Wideloo!"
 );
 
 console.log(
@@ -305,15 +305,8 @@ if (hero && homeLinks.length > 0) {
 document.addEventListener("DOMContentLoaded", function () {
 
     const banner = document.querySelector(".site-header-banner");
-    const header = document.querySelector("header");
+    if (!banner) return;
 
-    if (!banner || !header) return;
-
-    // Separar la franja superior del encabezado.
-    // La barra de navegación queda en su lugar original.
-    if (banner.parentElement === header) {
-        header.parentElement.insertBefore(banner, header);
-    }
 
     let ticking = false;
 

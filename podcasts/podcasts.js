@@ -1,47 +1,59 @@
 
-/* ==========================================
-   THE NEW LANGUAGE EXPERIMENT
-   PODCAST PAGE
-========================================== */
+/* ======================================
+   PODCASTS - FLOATING HEADER
+====================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const filterButtons =
-        document.querySelectorAll(".episode-filter");
+    const header = document.querySelector(".podcast-header");
 
-    const episodeCards =
-        document.querySelectorAll(".episode-card");
+    if (!header) return;
 
-    filterButtons.forEach(button => {
+    let ticking = false;
 
-        button.addEventListener("click", () => {
+    function updateHeader() {
 
-            const selectedLevel = button.dataset.level;
+        const scrollPosition = window.scrollY;
+        const isCompact = header.classList.contains("is-compact");
 
-            // Update active filter
-            filterButtons.forEach(item => {
-                item.classList.remove("active");
-                item.setAttribute("aria-pressed", "false");
+        if (!isCompact && scrollPosition > 120) {
+            header.classList.add("is-compact");
+        } else if (isCompact && scrollPosition < 30) {
+            header.classList.remove("is-compact");
+        }
+
+        ticking = false;
+    }
+
+    window.addEventListener("scroll", function () {
+
+        if (ticking) return;
+
+        ticking = true;
+        requestAnimationFrame(updateHeader);
+
+    }, { passive: true });
+
+    updateHeader();
+
+});
+
+
+/* Episode filters: preserve the selected level and accessible pressed state. */
+document.addEventListener("DOMContentLoaded", function () {
+    const filters = Array.from(document.querySelectorAll(".episode-filter"));
+    const cards = Array.from(document.querySelectorAll(".episode-card[data-level]"));
+    filters.forEach(function (filter) {
+        filter.addEventListener("click", function () {
+            const level = filter.dataset.level;
+            filters.forEach(function (item) {
+                const active = item === filter;
+                item.classList.toggle("active", active);
+                item.setAttribute("aria-pressed", String(active));
             });
-
-            button.classList.add("active");
-            button.setAttribute("aria-pressed", "true");
-
-            // Filter episodes
-            episodeCards.forEach(card => {
-
-                const cardLevel = card.dataset.level;
-
-                const shouldShow =
-                    selectedLevel === "all" ||
-                    cardLevel === selectedLevel;
-
-                card.hidden = !shouldShow;
-
+            cards.forEach(function (card) {
+                card.hidden = level !== "all" && card.dataset.level !== level;
             });
-
         });
-
     });
-
 });

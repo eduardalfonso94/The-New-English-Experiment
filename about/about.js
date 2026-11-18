@@ -1,45 +1,39 @@
 
-/* ==========================================
-   ABOUT US - MINIMALIST ANIMATIONS
-========================================== */
+/* ======================================
+   ABOUT US - FLOATING HEADER
+====================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const elements = document.querySelectorAll(
-        ".about-introduction-content, " +
-        ".about-section-heading, " +
-        ".approach-item, " +
-        ".about-purpose-intro, " +
-        ".purpose-item, " +
-        ".about-final"
-    );
+    const header = document.querySelector(".about-header");
 
-    if (
-        !("IntersectionObserver" in window) ||
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-        return;
+    if (!header) return;
+
+    let ticking = false;
+
+    function updateHeader() {
+
+        const isCompact = header.classList.contains("is-compact");
+
+        if (!isCompact && window.scrollY > 120) {
+            header.classList.add("is-compact");
+        } else if (isCompact && window.scrollY < 30) {
+            header.classList.remove("is-compact");
+        }
+
+        ticking = false;
     }
 
-    elements.forEach(element => {
-        element.classList.add("reveal-ready");
-    });
+    window.addEventListener("scroll", function () {
 
-    const observer = new IntersectionObserver(entries => {
+        if (ticking) return;
 
-        entries.forEach(entry => {
+        ticking = true;
 
-            if (entry.isIntersecting) {
-                entry.target.classList.add("reveal-visible");
-                observer.unobserve(entry.target);
-            }
+        requestAnimationFrame(updateHeader);
 
-        });
+    }, { passive: true });
 
-    }, {
-        threshold: 0.1
-    });
-
-    elements.forEach(element => observer.observe(element));
+    updateHeader();
 
 });
